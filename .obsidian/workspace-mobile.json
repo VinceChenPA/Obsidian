@@ -1,0 +1,130 @@
+{
+  "main": {
+    "id": "fbf27403146ea8b1",
+    "type": "split",
+    "children": [
+      {
+        "id": "922b49769b3bd5db",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4046fd66b19ae26",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BASEL_3/hkma.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c866d6bedbabaec6",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "d70da087c20b667a",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "db3361942749eb17",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "cad2a8d344e759a5",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "6cc63eb58592a527",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "9c1f2a416b855939",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "058c417dc1533cf8",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "BASEL_3/hkma.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "8a2b399771c9c28a",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "BASEL_3/hkma.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "9e883ae7c4a93cc7",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "BASEL_3/hkma.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "d70da087c20b667a",
+  "lastOpenFiles": [
+    "BASEL_3/hkma.md",
+    "健康/风热vs风寒.md",
+    "健康/风寒.md"
+  ]
+}
