@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03.Engineering/Python/Exception.md",
+                "file": "03.Engineering/Python/Foundations/Exception.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "04785f7dc74353ce",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03.Engineering/Python/Foundations/Network.md",
                 "mode": "preview",
                 "source": false
               }
             }
+          },
+          {
+            "id": "3a2dca99fa4ffd93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03.Engineering/Python/Foundations/NumPy.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,7 +118,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "03.Engineering/Python/Exception.md",
+            "file": "03.Engineering/Python/Foundations/NumPy.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,7 +135,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "03.Engineering/Python/Exception.md",
+            "file": "03.Engineering/Python/Foundations/NumPy.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -122,7 +147,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "03.Engineering/Python/Exception.md"
+            "file": "03.Engineering/Python/Foundations/NumPy.md"
           }
         }
       }
@@ -139,11 +164,19 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b88a95faa78e8c56",
+  "active": "3a2dca99fa4ffd93",
   "lastOpenFiles": [
+    "99.Attachments/1694336192881.jpeg.png",
+    "99.Attachments/v2-21184944f2a379ccdd17786f6ed5da4c.jpeg",
+    "03.Engineering/Python/Foundations/Network.md",
+    "03.Engineering/Python/Foundations/NumPy.md",
+    "03.Engineering/Python/Foundations/Exception.md",
+    "03.Engineering/Python/Foundations",
+    "99.Attachments/1694334325406 1.jpeg",
+    "99.Attachments/1694334325406.jpeg",
+    "99.Attachments",
     "00.DailyLogs/2023-09-06.md",
     "00.DailyLogs/2023-09-07.md",
-    "03.Engineering/Python/Exception.md",
     "03.Engineering/Python",
     "03.Engineering",
     "BASEL_3/hkma.md",
