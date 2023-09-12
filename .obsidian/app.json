@@ -2,5 +2,7 @@
   "newFileLocation": "current",
   "attachmentFolderPath": "99.Attachments",
   "promptDelete": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "livePreview": false
 }
