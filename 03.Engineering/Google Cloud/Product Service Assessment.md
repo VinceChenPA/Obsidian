@@ -1,0 +1,5 @@
+- Use Case
+- Pros
+- Cons
+- Cost
+- Difficulty of maintenance
