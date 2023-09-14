@@ -1,4 +1,10 @@
-**AI Infra eco system**
+---
+tags: type/quicknote
+status: unread
+creation date: 2023-09-14
+---
+
+AI Infra eco system**
 - Vertex AI
 how we build AI, search and conversation
 	- models

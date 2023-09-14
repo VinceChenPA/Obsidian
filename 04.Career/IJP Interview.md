@@ -1,3 +1,7 @@
+---
+creation date: 2023-09-14 09:47
+modification date: 星期四 14日 九月 2023 09:47:18
+---
 **Information Gathering**
 - This role is not just on existing FCDP delivery, but extending to leading new data strategic/service solution delivery
 - 
