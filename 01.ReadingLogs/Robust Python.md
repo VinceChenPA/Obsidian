@@ -60,3 +60,9 @@ ReadyToServeHotDog = NewType("ReadyToServeHotDog", HotDog)
 ```python
 VENDOR_NAME: Final = "Viafore's Auto-Dog"
 ```
+
+## C5. Collection Types
+**homogeneous**
+**heterogeneous**
+### TypedDict
+> since 3.8
