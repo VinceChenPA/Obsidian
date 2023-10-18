@@ -42,13 +42,14 @@ There are many benefits to using dbt, including:
 	- architecture changes
 	- deployed folder at cfs bucket
 	- emf command
+- Challenge facing
+1. There are still some Sql files Which is hard to convert into sql models or even not able to. will work with gft to get it resolved
+- conclusion
+	- summarize the steps of adopting dbt
+- current progress
 - next steps
 1. migrate the rest of hkma modules to dbt sql models as much as possible
 2. setup jenkins pipeline to support the nightly build
 3. prepare more tests, and integrate into nightly build pipeline
 4. work with gft for common deployment pattern
 5. work with gft for best practices, advance usage of dbt
-
-**Challenge facing**
-1. There are still some Sql files Which is hard to convert into sql models or even not able to. will work with gft to get it resolved
-2. 
