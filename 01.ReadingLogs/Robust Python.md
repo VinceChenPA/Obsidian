@@ -66,3 +66,25 @@ VENDOR_NAME: Final = "Viafore's Auto-Dog"
 **heterogeneous**
 ### TypedDict
 > since 3.8
+```python
+from typing import TypedDict
+```
+> `TypedDict` is only for the typechecker’s benefit. There is no runtime validation at all; the runtime type is just a dictionary.
+
+### TypeVar
+```python
+from typing import TypeVar
+T = TypeVar('T')
+def reverse(coll: list[T]) -> list[T]:
+    return coll[::-1]
+```
+
+### Generic
+> to be further explored
+
+### Abstract base classes (ABCs)
+> ABCs are classes intended to be subclassed, and require the subclass to implement very specific functions.
+
+
+## Typechecker
+> The mechanic, who wishes to do his work well, must first sharpen his tools.
