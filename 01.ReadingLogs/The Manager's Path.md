@@ -6,14 +6,15 @@ Category: Career Development
 **From an engineer to an engineering manager**
 
 # Management 101
-## one-on-one meetings
+## What to Expect from a Manager
+### one-on-one meetings
 - create human connection
 - get rid of introvert
 - building the trust
 - regular 1-1 about whatever needs discussing
 - for manager, can use 1-1 to discuss the status of projects with senior manager
 - for IC, try not make it as status report meeting
-## feedback and workplace guidance
+### feedback and workplace guidance
 - keep track of the feedback, good and bad, and use it when you write your self-review for the year
 - rehearsal of presentation to your manager, can also receive another type of feedback. it is also a kind of respect.
 - help to understand the value of the work you are doing
@@ -28,3 +29,31 @@ Category: Career Development
 > In addition, I encourage you to create and build a strong network of peers. One thing that early career engineers often don’t appreciate is how their current peers will turn into their future jobs. This peer group includes everyone from your schoolmates to your teammates to the people you meet at conferences and meetups. It’s OK to be a little bit shy, but most CTOs have to learn how to socialize with all sorts of people and create strong networks across companies.
 > 
 > One final thing to realize is that most CTOs are the CTOs of small companies. They are often the technical cofounders of startups. If you want to go down that path, the best thing to do is to work for a company that has a track record of people who have left it to found new companies. This is where you will meet your future cofounders and discover opportunities to get into new companies early.
+
+## How to Be Managed
+*Developing a sense of ownership and authority for your own experiences at work, and not relying on your manager to set the entire tone for your relationship*
+- Spent time thinking about what you want
+- You are responsible for your self
+	- Knowing yourself is step one
+	- Step two is going after what you want
+- Give your manager a break
+	- Especially as you become more senior, remember that your manager expects you to bring solutions, not problems.
+	- Try not to make every 1-1 about how you need something, how something is wrong, or how you want something more. 
+	- Asking for advice is always a good way to show respect and trust.
+- Choose your manager wisely
+	- how to play the game at the company
+	- strong networks
+
+# Mentoring
+## Being a mentor
+### Mentoring an Intern
+- The first thing you need is some sort of project for this intern to work on
+- Sit with him as much as possible these first few days.
+- Preparing the project to tasks at hand, and breaking it down to milestones
+**Listen Carefully**
+- One of the early lessons in leadership, whether it is via direct management or indirect influence, is that people are not good at saying precisely what they mean in a way that others can exactly understand. 
+- Repeat the question in different way
+- Use those whiteboards
+**Clearly communicate**
+
+**Calibrate your response**
