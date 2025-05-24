@@ -57,3 +57,34 @@ Category: Career Development
 **Clearly communicate**
 
 **Calibrate your response**
+
+# Tech Lead
+> I was more than just a good engineer. I was a good communicator. I could write clear documents, I could give presentations without melting down, and I could talk to people in different teams and different roles and explain what was going on. I was also good at prioritizing. I was eager to push work forward and decide what needed to be done next. Finally, I was willing to pick up the pieces and do what needed to be done to make progress.
+
+> got distracted by technical details. go down rabbit hole after rabbit hole
+
+> My job as tech lead was to continue to write code, but with the added responsibilities of representing the group to management, vetting our plans for feature delivery, and dealing with a lot of the details of the project management process.
+
+**The tech lead role** is not a point on the ladder, but a set of responsibilities that any engineer may take on once they reach the senior level. This role may or may not include people management, but if it does, the tech lead is expected to manage these team members to the high management standards of RTR tech. These standards include:
+
+- Regular (weekly) 1-1 touchbases
+    
+- Regular feedback on career growth, progression towards goals, areas for improvement, and praise as warranted
+    
+- Working with reports to identify areas for learning and helping them grow in these areas via project work, external learning, or additional mentoring
+
+If a tech lead is not managing directly, they are still expected to provide mentorship and guidance to the other members of the team.
+
+The tech lead is learning how to be a strong technical project manager, and as such, they are scaling themselves by delegating work effectively without micromanaging. They focus on the whole team’s productivity and strive to increase the impact of the team’s work product. They are empowered to make independent decisions for the team and are learning how to handle difficult management and leadership situations. They are also learning how to partner effectively with product, analytics, and other areas of the business.
+
+It is not required that an engineer work as a tech lead to progress, but it is the most common way for engineers to grow from senior engineer 1 -> 2 and is required to grow from senior engineer 2 to engineering lead. Realistically it is very hard to grow past senior engineer 2 without ever having acted as a tech lead, even on the individual contributor track, due to the importance at senior levels of leadership and responsibility.
+
+> A leader, responsible for a (software) development team, who spends at least 30 percent of their time writing code with the team.
+
+> Being a tech lead is an exercise in influencing without authority.
+
+balancing time between project management and writing code
+
+it’s important to get your team into a schedule that allows them to be focused on development for long stretches of time, because _they_ will need to focus for several days on coding problems.
+
+## Being a Tech Lead 101
