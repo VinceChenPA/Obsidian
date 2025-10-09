@@ -1,10 +1,10 @@
 # QMT
 
 **QMT download link**
-[Link](https://xuntou.net/#/userInfo?id=j14o11)
+[QMT Download Page](https://xuntou.net/#/userInfo?id=j14o11)
 
 **申请模拟账户**
-https://www.xuntou.net/forum.php?mod=viewthread&tid=243&extra=page%3D1
+[申请模拟账户](https://www.xuntou.net/forum.php?mod=viewthread&tid=243&extra=page%3D1)
 
 **QMT 模拟账户**
 Stock: 2036424
