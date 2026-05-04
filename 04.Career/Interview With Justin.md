@@ -1,3 +1,7 @@
+---
+tags:
+  - career/interview
+---
 # self introduction
 **highlight 7 years in current role as SCS**
 

@@ -1,3 +1,7 @@
+---
+tags:
+  - engineering/python
+  - python/foundations
+---
 
-**双引号表示“人类可读的文本”，单引号表示“数据”。**
-
+**双引号表示"人类可读的文本"，单引号表示"数据"。

@@ -1,3 +1,7 @@
+---
+tags:
+  - config/gemini
+---
 # Gemini Configuration for My Obsidian Vault
 
 This file provides instructions for Gemini on how to interact with my Obsidian knowledge base.

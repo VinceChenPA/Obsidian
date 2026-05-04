@@ -1,3 +1,8 @@
+---
+tags:
+  - engineering/python
+  - python/foundations
+---
 ```python
 try:
     # 可能引发异常的代码

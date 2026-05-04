@@ -1,6 +1,10 @@
 ---
 creation date: 2023-09-11 23:04
 modification date: 星期一 11日 九月 2023 23:04:24
+tags:
+  - engineering/python
+  - python/foundations
+  - python/numpy
 ---
 **broadcasting**
 向量和标量之间的运算

@@ -1,42 +1,61 @@
-**PPT 标题：** dbt 介绍
+---
+tags:
+  - engineering/dbt
+---
+# dbt 介绍
 
-**PPT 简介：**
+dbt (data build tool) 是一个开源的数据转换工具，帮助数据团队以工程化最佳实践构建和维护数据管道。
 
-dbt 是一个用于数据仓库建模和数据分析的开源工具。它可以帮助数据工程师和数据科学家快速、轻松地构建和维护数据仓库。dbt 使用 SQL 作为其主要编程语言，并提供一个强大的 DSL，可以用于定义数据仓库模型、运行数据质量检查和生成数据报告。
+## 什么是 dbt？
 
-**PPT 内容：**
+dbt 是一个用于数据仓库建模和数据分析的开源工具，专注于数据转换（T in ELT）。它使用 SQL 作为主要语言，结合 Jinja2 模板引擎，让数据分析师和工程师能够在现代数据仓库（如 BigQuery、Snowflake、Redshift）中直接定义数据模型，无需关心执行编排。
 
-**1. 什么是 dbt？**
+## 核心能力
 
-dbt 是一个用于数据仓库建模和数据分析的开源工具。它可以帮助数据工程师和数据科学家快速、轻松地构建和维护数据仓库。
+- **SQL 模型**：用 SQL select 语句定义数据转换，dbt 将其编译为表或视图
+- **Jinja2 模板**：支持控制结构（if/for）、环境变量、宏（macros）等，把 SQL 变成编程环境
+- **依赖管理**：模型间可相互引用，dbt 自动构建依赖图并确定执行顺序
+- **测试**：内置数据质量测试（唯一性、非空、外键等），支持自定义测试
+- **文档**：自动生成数据文档和血缘关系图
+- **版本控制**：与 Git 集成，支持代码审查和回滚
 
-**2. dbt 的优势**
+## 优势
 
-- 强大的 DSL：dbt 使用 SQL 作为其主要编程语言，并提供一个强大的 DSL，可以用于定义数据仓库模型、运行数据质量检查和生成数据报告。
-- 自动化：dbt 可以自动运行数据建模、数据质量检查和数据报告等任务。
-- 可重复性：dbt 使用版本控制来记录数据仓库的变化，确保数据仓库的一致性和可追溯性。
+- 提高数据质量和可靠性（测试 + 文档）
+- 模块化代码，提升复用性和可维护性
+- 自动化编译、调度、文档生成
+- 团队协作（Git + Code Review）
+- 数据血缘可视化，便于排障
 
-**3. dbt 的使用场景**
+## 使用场景
 
-- 数据仓库建模：dbt 可以用于定义数据仓库模型，包括事实表、维度表和连接表。
-- 数据质量检查：dbt 可以用于运行数据质量检查，确保数据仓库中的数据准确性。
-- 数据分析：dbt 可以用于生成数据报告，帮助数据分析人员进行数据分析。
+- 数据仓库建模（事实表、维度表）
+- 数据质量检查
+- 数据报告生成
 
-**4. dbt 的快速入门**
+## 快速入门
 
-- 安装 dbt：可以使用 pip 或 conda 安装 dbt。
-- 创建 dbt 项目：使用 dbt init 命令创建 dbt 项目。
-- 编写 dbt 模型：使用 SQL 编写 dbt 模型。
-- 运行 dbt 命令：使用 dbt run 命令运行 dbt 命令。
+1. 安装：`pip install dbt-core`
+2. 初始化项目：`dbt init`
+3. 编写 SQL 模型文件
+4. 运行：`dbt run`
+5. 测试：`dbt test`
+6. 生成文档：`dbt docs generate`
 
-**5. dbt 的未来发展**
+## 参考链接
 
-dbt 是一个快速发展的开源工具，未来可能会在以下几个方面进行发展：
+- [dbt Tutorial — startdataengineering.com](https://www.startdataengineering.com/post/dbt-data-build-tool-tutorial/)
+- [dbt 官方文档](https://docs.getdbt.com/)
 
-- 支持更多数据源：dbt 目前支持 PostgreSQL、MySQL、Redshift 等数据库，未来可能会支持更多数据源。
-- 提供更强大的功能：dbt 目前已经提供了丰富的功能，未来可能会提供更强大的功能，例如支持数据流处理、机器学习等。
-- 与其他工具的集成：dbt 已经可以与其他工具进行集成，例如 Airflow、Snowflake 等。未来可能会与更多工具进行集成。
+---
 
-**PPT 结尾：**
+## Overview (English)
 
-dbt 是一个强大的工具，可以帮助数据工程师和数据科学家快速、轻松地构建和维护数据仓库。如果您正在寻找一个用于数据仓库建模和数据分析的工具，dbt 是一个不错的选择。
+dbt is a powerful open-source tool that transforms the way data teams build and maintain data pipelines.
+
+1. **Organizes Data Transformations with SQL** — centralized codebase for data transformations
+2. **Enforces Best Practices** — modularity, version control, testing, documentation
+3. **Streamlines Workflows** — automates compilation, scheduling, documentation
+4. **Empowers Collaboration** — version control and clear model structure
+5. **Provides Comprehensive Documentation** — living record of your data pipeline
+6. **Visualizes Data Lineage** — dependency graphs for tracing data flow

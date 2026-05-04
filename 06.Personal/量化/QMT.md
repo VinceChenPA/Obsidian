@@ -1,3 +1,8 @@
+---
+tags:
+  - personal/investment
+  - finance/trading
+---
 # QMT
 
 **QMT download link**

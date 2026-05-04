@@ -1,4 +1,8 @@
-
+---
+tags:
+  - reading/books
+  - engineering/python
+---
 # C3. Type Annotations
 **typecheckers**
 ```
