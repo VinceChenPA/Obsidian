@@ -26,6 +26,7 @@ This is a personal Obsidian knowledge base. All notes are written in Markdown.
 - `git pull` — Pull latest notes (uses HTTPS remote)
 - `git push` — Push local notes
 - No build, test, or lint commands exist for this vault.
+- `defuddle.cmd parse <url> --md` — Extract clean markdown from web pages (use `.cmd` suffix on Windows due to PowerShell execution policy).
 
 ## Environment
 
