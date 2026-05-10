@@ -19,6 +19,9 @@
 ## 容器与编排
 - [[03.Engineering/k8s/k8s|Kubernetes]]
 
+## AI 辅助开发
+- [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
+
 ## 通用工具
 ### Git
 - [[03.Engineering/Common_Area/git/git tips|Git Tips]]
