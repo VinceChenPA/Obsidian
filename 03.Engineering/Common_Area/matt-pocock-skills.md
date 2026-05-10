@@ -92,21 +92,155 @@
 
 ---
 
+## 关键问题：opencode + Copilot Agent Mode 双环境配置
+
+两套环境的文件读取规则：
+
+| 文件 | opencode | Copilot Agent Mode |
+|---|---|---|
+| `AGENTS.md` | **读取**（主要） | 读取 |
+| `CLAUDE.md` | 读取 | **读取** |
+| `.github/copilot-instructions.md` | 忽略 | **读取**（最高优先级） |
+| `.opencode/skills/*/SKILL.md` | **读取** | 忽略 |
+
+### 解决方案：分层配置
+
+```
+project/
+├── CLAUDE.md                    ← 共享：工程方法论（两边都读）
+├── AGENTS.md                    ← 共享：项目上下文/偏好（两边都读）
+├── .github/
+│   └── copilot-instructions.md  ← 专属：Copilot 行为微调（opencode 忽略）
+└── .opencode/
+    └── skills/                  ← 专属：opencode 斜杠命令（Copilot 忽略）
+```
+
+### 每份文件的职责
+
+**`CLAUDE.md`** — 核心工程规范，两边共享：
+```markdown
+# 工程规范
+
+## 领域语言
+- CONTEXT.md 定义了所有业务术语标准名称
+- 代码命名与 CONTEXT.md 保持一致
+
+## 工作流
+- 新功能前：先盘问方案，再动手
+- 编码时：先写类型，再写实现，TDD 垂直切片
+- 调试时：先建反馈回路 → 列假设 → 逐一验证
+- 定期检查架构深度
+
+## Skills
+### grill-me
+当用户说"盘问我"或"grill me"时：
+逐个验证每个设计分支，一次问一个问题，提供推荐答案。
+能用代码库验证的问题不需要问我。
+
+### tdd
+用红-绿-重构循环，一个测试对应一段实现（垂直切片）。
+测试通过公开接口验证行为，不测实现细节。
+```
+
+**`AGENTS.md`** — 项目上下文 + 工具特定配置：
+```markdown
+# 项目配置
+
+## 项目
+- 名称/用途/仓库地址
+
+## 环境偏好
+- 语言、模型、超时设置等
+
+## 工具特定说明
+- opencode: session memory 用法、技能路径
+- 通用: 写入 supermemory 前检查隐私信息
+```
+
+**`.github/copilot-instructions.md`** — Copilot 行为微调（仅 Copilot 读取）：
+```markdown
+参考 CLAUDE.md 中的工程规范。
+
+额外要求：
+- 函数注释用 JSDoc
+- 先提方案，确认后再实现
+- 回复简洁，去掉客套话
+```
+
+---
+
+## 同一套技能在两套环境都生效
+
+Copilot Agent Mode 也支持 skills，但用的是 **`CLAUDE.md` / `AGENTS.md` 中的自然语言指令**，没有 opencode 的 `SKILL.md` 元数据层。
+
+策略：**`CLAUDE.md` 作为单一事实来源，`.opencode/skills/` 只作为快捷入口**
+
+```
+CLAUDE.md（定义所有技能的文字指令）
+    ├── Copilot Agent Mode: 直接读取，自然语言触发
+    └── opencode: 通过 SKILL.md 引用 CLAUDE.md 的内容
+```
+
+### 示例
+
+**`CLAUDE.md`** 中定义技能：
+```markdown
+## Skills
+
+### grill-me
+当我说"盘问我"或"grill me"时：
+逐个验证每个设计分支，一次问一个问题，提供你的推荐答案。
+能用代码库验证的问题不需要问我。
+
+### tdd
+用红-绿-重构循环，一个测试对应一段实现（垂直切片）。
+测试通过公开接口验证行为，不测实现细节。
+```
+
+**`.opencode/skills/grill-me/SKILL.md`** — opencode 快捷入口（引用 CLAUDE.md）：
+```markdown
+---
+name: grill-me
+description: 盘问设计方案。Use when 用户说"盘问我"或"grill me"。
+---
+
+见项目根目录 CLAUDE.md 中的 `## Skills` → `### grill-me` 章节。
+按该流程严格执行。
+```
+
+**`.opencode/skills/tdd/SKILL.md`** — 同理：
+```markdown
+---
+name: tdd
+description: TDD 红-绿-重构循环。Use when 用户说"tdd"或"测试驱动"。
+---
+
+见项目根目录 CLAUDE.md 中的 `## Skills` → `### tdd` 章节。
+按该流程严格执行。
+```
+
+### 两套环境下的使用方式对比
+
+| 技能 | opencode 触发 | Copilot Agent Mode 触发 |
+|---|---|---|
+| grill-me | `/grill-me` 或 "盘问我" | "盘问我"或 "grill me" |
+| tdd | `/tdd` 或 "tdd" | "用 TDD 方式写" |
+| diagnose | `/diagnose" | "按 diagnose 流程调试" |
+| 其他 | 自然语言 | 自然语言 |
+
+**关键原则**：`CLAUDE.md` 是所有技能的唯一事实来源。opencode 的 `.opencode/skills/` 只是添加了斜杠命令快捷方式，不重复定义指令内容。这样修改 `CLAUDE.md` 中的技能逻辑，两边同时生效。
+
+---
+
 ## VSCode + GitHub Copilot 适配方案
 
-Matt 的 skills 为 **Claude Code（CLI 代理）** 设计，Copilot 是编辑器内联补全 + Chat，以下为适配方案：
+Matt 的 skills 为 **Claude Code（CLI 代理）** 设计，以下为在 Copilot 中的适配：
 
 ### 1. CONTEXT.md（最高 ROI）
 项目根目录创建 `CONTEXT.md` 定义业务术语。Copilot 补全会自然引用，生成更一致的命名。
 
-### 2. Copilot Custom Instructions
-在 `.github/copilot-instructions.md` 配置：
-```markdown
-要求：
-- 变量名与函数名与 CONTEXT.md 中的领域语言保持一致
-- 回复直接给技术内容，去掉客套话
-- 优先写测试，遵循 TDD 风格
-```
+### 2. 共享 CLAUDE.md
+按上述分层方案配置 `CLAUDE.md`，Copilot Agent Mode 会自动读取其中的技能定义。
 
 ### 3. 盘问流程 → Copilot Chat
 手动执行：在 Chat 中先描述方案 → 让 Copilot 反问 → 达成共识 → 再写代码。
@@ -119,14 +253,19 @@ Copilot Chat 中引导："分析这个模块的深度，找重构机会，用 CO
 
 ---
 
-## 项目目录推荐结构
+## 项目目录完整推荐结构
 
 ```
 project-root/
 ├── CONTEXT.md                    # 领域语言词典（最高优先）
-├── AGENTS.md                     # 代理说明（opencode / Claude Code）
+├── CLAUDE.md                     # 共享工程规范 + Skills 定义（两边读）
+├── AGENTS.md                     # 项目配置 + 工具特定偏好（两边读）
 ├── .github/
-│   └── copilot-instructions.md   # Copilot 自定义指令
+│   └── copilot-instructions.md   # Copilot 专属指令（opencode 忽略）
+├── .opencode/
+│   └── skills/
+│       ├── grill-me/SKILL.md     # opencode 斜杠命令快捷入口
+│       └── tdd/SKILL.md
 ├── docs/
 │   ├── adr/                      # 架构决策记录
 │   │   ├── 0001-why-postgres.md
@@ -148,11 +287,11 @@ project-root/
 npx skills@latest add mattpocock/skills
 # 选择需要的 skill → 运行 /setup-matt-pocock-skills 初始化
 
-# VSCode + Copilot 用户
+# opencode + Copilot Agent Mode 双环境用户
 # 1. 创建 CONTEXT.md（最重要）
-# 2. 配置 .github/copilot-instructions.md
-# 3. 在 Copilot Chat 中手动执行盘问和 TDD 流程
-# 4. 如果在 opencode 中使用，将 skill 转为 opencode skill 格式
+# 2. 创建 CLAUDE.md 写入共享技能定义
+# 3. 在 .opencode/skills/ 创建 SKILL.md 快捷入口（引用 CLAUDE.md）
+# 4. 可选：.github/copilot-instructions.md 微调 Copilot 行为
 ```
 
-**核心原则**: 先用类型和语言对齐，再用 TDD 建立反馈回路，最后通过 Deep Module 重构保持架构健康。
+**核心原则**: CLAUDE.md 是单一事实来源，opencode skills 只是快捷入口，两边修改都在 CLAUDE.md 中。
