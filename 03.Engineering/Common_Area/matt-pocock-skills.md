@@ -101,19 +101,40 @@
 | `AGENTS.md` | **读取**（主要） | 读取 |
 | `CLAUDE.md` | 读取 | **读取** |
 | `.github/copilot-instructions.md` | 忽略 | **读取**（最高优先级） |
+| `.agents/skills/*/SKILL.md` | **读取** ✅ 原生支持 | 读取（通过 CLAUDE.md/AGENTS.md 引用） |
+| `.github/skills/` | 忽略 | 生态预留 |
 | `.opencode/skills/*/SKILL.md` | **读取** | 忽略 |
+| `.claude/skills/*/SKILL.md` | **读取**（兼容） | 忽略 |
 
-### 解决方案：分层配置
+### 解决方案：双目录协作 + 分层配置
+
+**opencode 官方已原生支持 `.agents/skills/`**（详见 [docs](https://opencode.ai/docs/skills/)），这是当前最优的共享路径。
 
 ```
 project/
+├── .agents/skills/              ← 共享：opencode + Claude Code 都读取
+│   ├── grill-me/SKILL.md
+│   └── tdd/SKILL.md
+├── .github/
+│   ├── copilot-instructions.md  ← Copilot 专属指令（opencode 忽略）
+│   └── skills/                  ← Copilot 生态预留（未来扩展）
 ├── CLAUDE.md                    ← 共享：工程方法论（两边都读）
 ├── AGENTS.md                    ← 共享：项目上下文/偏好（两边都读）
-├── .github/
-│   └── copilot-instructions.md  ← 专属：Copilot 行为微调（opencode 忽略）
-└── .opencode/
-    └── skills/                  ← 专属：opencode 斜杠命令（Copilot 忽略）
+├── .opencode/
+│   └── skills/                  ← 专属：opencode 斜杠命令（Copilot 忽略）
+└── .claude/
+    └── skills/                  ← 专属：Claude Code 兼容路径
 ```
+
+### 各目录职责
+
+| 目录 | 谁读 | 格式 | 作用 |
+|---|---|---|---|
+| `.agents/skills/` | opencode ✅, Claude Code ✅ | `SKILL.md` | **共享技能目录**，工具中立 |
+| `.opencode/skills/` | opencode 仅 | `SKILL.md` | opencode 专属覆盖 |
+| `.claude/skills/` | opencode ✅（兼容）, Claude Code ✅ | `SKILL.md` | Claude Code 专属覆盖 |
+| `.github/skills/` | Copilot 生态（预留） | 自然语言 md | Copilot 专属技能定义 |
+| `.github/copilot-instructions.md` | Copilot ✅ | 自然语言 md | Copilot 项目级指令 |
 
 ### 每份文件的职责
 
@@ -171,25 +192,45 @@ project/
 
 ## 同一套技能在两套环境都生效
 
-Copilot Agent Mode 也支持 skills，但用的是 **`CLAUDE.md` / `AGENTS.md` 中的自然语言指令**，没有 opencode 的 `SKILL.md` 元数据层。
+opencode 原生支持 `.agents/skills/`、`.opencode/skills/` 和 `.claude/skills/` 三个路径。Claude Code 也读 `.agents/skills/` 和 `.claude/skills/`。Copilot Agent Mode 读 `CLAUDE.md` / `AGENTS.md` 中的自然语言指令。
 
-策略：**`CLAUDE.md` 作为单一事实来源，`.opencode/skills/` 只作为快捷入口**
+策略：**`.agents/skills/` 作为共享 SKILL.md 源，`CLAUDE.md` 提供自然语言定义供 Copilot 读取**
 
 ```
-CLAUDE.md（定义所有技能的文字指令）
-    ├── Copilot Agent Mode: 直接读取，自然语言触发
-    └── opencode: 通过 SKILL.md 引用 CLAUDE.md 的内容
+.agents/skills/（SKILL.md 格式）
+    ├── opencode: 直接通过 skill 工具加载 ✅
+    ├── Claude Code: 直接通过 skill 工具加载 ✅
+    └── Copilot: 通过 CLAUDE.md 引用（自然语言触发）
 ```
 
-### 示例
+### 三套环境的实际读取链路
 
-**`CLAUDE.md`** 中定义技能：
+| 环境 | 技能定义来源 | 触发方式 |
+|---|---|---|
+| opencode CLI | `.agents/skills/*/SKILL.md` | skill 工具自动发现，或 `/skill-name` 斜杠命令 |
+| Claude Code CLI | `.agents/skills/*/SKILL.md` | skill 插件加载 |
+| Copilot Agent Mode | `CLAUDE.md` / `AGENTS.md` 中的文字描述 | 自然语言触发 |
+
+### 推荐配置
+
+**`.agents/skills/grill-me/SKILL.md`** — 共享技能定义（opencode + Claude Code 原生加载）：
+```markdown
+---
+name: grill-me
+description: 盘问设计方案。Use when 用户说"盘问我"或"grill me"。
+---
+
+逐个验证每个设计分支，一次问一个问题，提供你的推荐答案。
+能用代码库验证的问题不需要问我。
+```
+
+**`CLAUDE.md`** — 为 Copilot 提供同等的自然语言技能描述：
 ```markdown
 ## Skills
 
 ### grill-me
 当我说"盘问我"或"grill me"时：
-逐个验证每个设计分支，一次问一个问题，提供你的推荐答案。
+逐个验证每个设计分支，一次问一个问题，提供推荐答案。
 能用代码库验证的问题不需要问我。
 
 ### tdd
@@ -197,38 +238,28 @@ CLAUDE.md（定义所有技能的文字指令）
 测试通过公开接口验证行为，不测实现细节。
 ```
 
-**`.opencode/skills/grill-me/SKILL.md`** — opencode 快捷入口（引用 CLAUDE.md）：
+**`.github/copilot-instructions.md`** — Copilot 专属引用：
 ```markdown
----
-name: grill-me
-description: 盘问设计方案。Use when 用户说"盘问我"或"grill me"。
----
-
-见项目根目录 CLAUDE.md 中的 `## Skills` → `### grill-me` 章节。
-按该流程严格执行。
+参考 CLAUDE.md 中的工程规范和 Skills 定义。
+本项目的共享技能定义在 .agents/skills/ 目录下，遇到相关任务时读取对应内容。
 ```
 
-**`.opencode/skills/tdd/SKILL.md`** — 同理：
-```markdown
----
-name: tdd
-description: TDD 红-绿-重构循环。Use when 用户说"tdd"或"测试驱动"。
----
+### 为什么 `.agents/skills/` 是最佳共享路径
 
-见项目根目录 CLAUDE.md 中的 `## Skills` → `### tdd` 章节。
-按该流程严格执行。
-```
+- **opencode 官方已原生支持**（同 `.opencode/skills/` 同级）
+- **Claude Code 兼容**（也可以用自己的 `.claude/skills/`）
+- **工具中立** — `.agents/` 正在成为跨工具标准目录名
+- 如果某个工具需要专属覆盖，可以在自己的目录（`.opencode/skills/`、`.claude/skills/`）放同名 skill，优先级高于 `.agents/skills/`
 
-### 两套环境下的使用方式对比
+### 三套环境触发方式对比
 
-| 技能 | opencode 触发 | Copilot Agent Mode 触发 |
-|---|---|---|
-| grill-me | `/grill-me` 或 "盘问我" | "盘问我"或 "grill me" |
-| tdd | `/tdd` 或 "tdd" | "用 TDD 方式写" |
-| diagnose | `/diagnose" | "按 diagnose 流程调试" |
-| 其他 | 自然语言 | 自然语言 |
+| 技能 | opencode | Claude Code | Copilot Agent Mode |
+|---|---|---|---|
+| grill-me | `/grill-me` 或 "盘问我" | `/grill-me` 或 "盘问我" | "盘问我"或 "grill me" |
+| tdd | `/tdd` 或 "tdd" | `/tdd` 或 "tdd" | "用 TDD 方式写" |
+| diagnose | `/diagnose` 或项目自然语言 | `/diagnose` | "按 diagnose 流程调试" |
 
-**关键原则**：`CLAUDE.md` 是所有技能的唯一事实来源。opencode 的 `.opencode/skills/` 只是添加了斜杠命令快捷方式，不重复定义指令内容。这样修改 `CLAUDE.md` 中的技能逻辑，两边同时生效。
+**关键原则**：`.agents/skills/` 是共享源（opencode + Claude Code 原生加载），`CLAUDE.md` 为 Copilot 提供同等的自然语言版本。一套技能定义，三套环境都可以使用。
 
 ---
 
@@ -258,14 +289,19 @@ Copilot Chat 中引导："分析这个模块的深度，找重构机会，用 CO
 ```
 project-root/
 ├── CONTEXT.md                    # 领域语言词典（最高优先）
-├── CLAUDE.md                     # 共享工程规范 + Skills 定义（两边读）
+├── CLAUDE.md                     # 共享工程规范 + Skills 定义（Copilot 读取）
 ├── AGENTS.md                     # 项目配置 + 工具特定偏好（两边读）
-├── .github/
-│   └── copilot-instructions.md   # Copilot 专属指令（opencode 忽略）
-├── .opencode/
-│   └── skills/
-│       ├── grill-me/SKILL.md     # opencode 斜杠命令快捷入口
+├── .agents/
+│   └── skills/                   # 共享技能目录（opencode + Claude Code 原生加载）
+│       ├── grill-me/SKILL.md
 │       └── tdd/SKILL.md
+├── .github/
+│   ├── copilot-instructions.md   # Copilot 专属指令（opencode 忽略）
+│   └── skills/                   # Copilot 生态预留（可选）
+├── .opencode/
+│   └── skills/                   # opencode 专属覆盖（优先级最高）
+├── .claude/
+│   └── skills/                   # Claude Code 专属覆盖（可选）
 ├── docs/
 │   ├── adr/                      # 架构决策记录
 │   │   ├── 0001-why-postgres.md
@@ -287,11 +323,12 @@ project-root/
 npx skills@latest add mattpocock/skills
 # 选择需要的 skill → 运行 /setup-matt-pocock-skills 初始化
 
-# opencode + Copilot Agent Mode 双环境用户
+# opencode + Copilot Agent Mode + Claude Code 三环境用户
 # 1. 创建 CONTEXT.md（最重要）
-# 2. 创建 CLAUDE.md 写入共享技能定义
-# 3. 在 .opencode/skills/ 创建 SKILL.md 快捷入口（引用 CLAUDE.md）
+# 2. 在 .agents/skills/ 创建 SKILL.md（opencode + Claude Code 原生加载）
+# 3. 在 CLAUDE.md 写入同等的自然语言技能定义（Copilot 读取）
 # 4. 可选：.github/copilot-instructions.md 微调 Copilot 行为
+# 5. 可选：.opencode/skills/ 添加 opencode 专属覆盖
 ```
 
-**核心原则**: CLAUDE.md 是单一事实来源，opencode skills 只是快捷入口，两边修改都在 CLAUDE.md 中。
+**核心原则**: `.agents/skills/` 是共享 SKILL.md 源（opencode + Claude Code 原生加载），`CLAUDE.md` 为 Copilot 提供同等的自然语言版本。一套技能定义，三套环境都可以使用。
