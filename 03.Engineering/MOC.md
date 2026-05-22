@@ -36,3 +36,4 @@
 - [[03.Engineering/Common_Area/Linux/opencode-web-setup|opencode web 部署]]
 - [[03.Engineering/Common_Area/Linux/opencode-version-log|opencode 版本记录]]
 - [[03.Engineering/Common_Area/Linux/opencode-webfetch-architecture|opencode webfetch 架构]]
+- [[03.Engineering/Common_Area/Linux/opencode-webfetch-v4-repair|opencode DeepSeek V4 配置 & webfetch 修复]]
