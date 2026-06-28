@@ -4,3 +4,4 @@
 - [[06.Personal/量化/QMT|QMT 量化交易]]
 - [[06.Personal/AI/MCP|MCP 协议]]
 - [[06.Personal/亲子教育理念|亲子教育理念]]
+- [[06.Personal/人生回报率最高的12个习惯|人生回报率最高的12个习惯]]
