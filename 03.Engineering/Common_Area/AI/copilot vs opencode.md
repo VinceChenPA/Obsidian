@@ -21,13 +21,13 @@ OpenCode：开发者指挥 AI Agent
 
 一、核心定位差异
 
-	GitHub Copilot	OpenCode
-
-本质	AI 软件工程助手	AI Coding Agent 平台
-核心目标	提升开发者效率	扩大 AI 自主开发能力
-使用方式	人驱动 AI	目标驱动 AI
-主要场景	日常研发	自动化任务执行
-思维模式	Pair Programmer	AI Engineer
+| | GitHub Copilot | OpenCode |
+|---|---|---|
+| 本质 | AI 软件工程助手 | AI Coding Agent 平台 |
+| 核心目标 | 提升开发者效率 | 扩大 AI 自主开发能力 |
+| 使用方式 | 人驱动 AI | 目标驱动 AI |
+| 主要场景 | 日常研发 | 自动化任务执行 |
+| 思维模式 | Pair Programmer | AI Engineer |
 
 
 
@@ -59,15 +59,11 @@ Review
 
 AI 负责：
 
-补代码
-
-解释代码
-
-提供方案
-
-修改部分代码
-
-Review
+- 补代码
+- 解释代码
+- 提供方案
+- 修改部分代码
+- Review
 
 
 核心：
@@ -103,15 +99,11 @@ Agent 分析项目
 
 AI 负责：
 
-探索代码库
-
-设计方案
-
-执行修改
-
-调试
-
-迭代
+- 探索代码库
+- 设计方案
+- 执行修改
+- 调试
+- 迭代
 
 
 核心：
@@ -197,11 +189,9 @@ MCP
 
 适合：
 
-自动化开发
-
-独立开发
-
-大规模改造
+- 自动化开发
+- 独立开发
+- 大规模改造
 
 
 
@@ -213,28 +203,22 @@ Copilot
 
 Skill 更偏：
 
-官方能力
-+
-GitHub 工作流
-+
-企业场景
+- 官方能力
+- GitHub 工作流
+- 企业场景
 
 优势：
 
-稳定
-
-标准
-
-易管理
+- 稳定
+- 标准
+- 易管理
 
 
 例如：
 
-Code Review
-
-PR 分析
-
-Issue 处理
+- Code Review
+- PR 分析
+- Issue 处理
 
 
 不足：
@@ -252,12 +236,10 @@ Skill 更像：
 
 例如：
 
-skills/
-
-database-expert
-security-reviewer
-api-designer
-deployment-helper
+- `skills/database-expert`
+- `skills/security-reviewer`
+- `skills/api-designer`
+- `skills/deployment-helper`
 
 Agent 可以：
 
@@ -327,11 +309,9 @@ CI/CD
 
 适合：
 
-大公司
-
-标准流程
-
-团队协作
+- 大公司
+- 标准流程
+- 团队协作
 
 
 
@@ -374,14 +354,14 @@ Agent：
 
 六、模型和生态
 
-	Copilot	OpenCode
-
-模型选择	相对受 GitHub 体系影响	更开放
-本地模型	不突出	更适合
-CLI	弱一些	强
-IDE	强	一般
-企业集成	强	需要建设
-开放性	中	高
+| | Copilot | OpenCode |
+|---|---|---|
+| 模型选择 | 相对受 GitHub 体系影响 | 更开放 |
+| 本地模型 | 不突出 | 更适合 |
+| CLI | 弱一些 | 强 |
+| IDE | 强 | 一般 |
+| 企业集成 | 强 | 需要建设 |
+| 开放性 | 中 | 高 |
 
 
 
@@ -393,13 +373,10 @@ IDE	强	一般
 
 例如：
 
-写 API
-
-写页面
-
-写 CRUD
-
-修改小功能
+- 写 API
+- 写页面
+- 写 CRUD
+- 修改小功能
 
 
 推荐：
@@ -417,11 +394,9 @@ Copilot
 
 例如：
 
-Spring Boot 升级
-
-单体拆微服务
-
-大规模 API 修改
+- Spring Boot 升级
+- 单体拆微服务
+- 大规模 API 修改
 
 
 两者接近。
@@ -471,10 +446,10 @@ OpenCode
 
 它更适合：
 
-架构
-代码
-测试
-部署
+- 架构
+- 代码
+- 测试
+- 部署
 
 连续推进。
 
@@ -489,15 +464,11 @@ Copilot
 
 因为：
 
-GitHub
-+
-PR
-+
-Review
-+
-Actions
-+
-权限管理
+- GitHub
+- PR
+- Review
+- Actions
+- 权限管理
 
 形成完整闭环。
 
