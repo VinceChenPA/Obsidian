@@ -5,3 +5,4 @@
 - [[04.Career/Principle Engineer|Principal Engineer 角色]]
 - [[04.Career/感想|工作感想]]
 - [[04.Career/AI Assisted Programming Workflow|AI 辅助编程工作流 - Matt Pocock]]
+- [[04.Career/HSBC How We Lead 领导力框架|HSBC How We Lead 领导力框架]]
