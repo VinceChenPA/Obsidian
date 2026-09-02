@@ -14,7 +14,7 @@
 | `.github/copilot-instructions.md` | GitHub Copilot |
 | `GLOBAL_RULES.md`、`.windsurf/rules/*.md` | Windsurf |
 | `CONVENTIONS.md` | aider（代码风格约束） |
-| `CONTEXT.md` | 领域上下文（opencode 支持但已标记 deprecated） |
+| `CONTEXT.md` | 领域上下文（opencode 第三级回退，已 deprecated，见下文） |
 
 **技能/方法类（按需调用）**
 - `SKILL.md` — 技能定义，位于 `.opencode/skills/`、`.agents/skills/`、`.claude/skills/` 等
@@ -59,3 +59,13 @@
 ## 参考资料
 - opencode Rules 文档：https://opencode.ai/docs/rules/
 - 源码：`packages/opencode/src/session/instruction.ts`（v1.18.9 与 main 一致）、`packages/core/src/fs-util.ts`（findUp/globUp）
+
+## 附：CONTEXT.md 支持状态确认（2026-09-02，非源码渠道核实）
+
+- **当前仍受支持**：仅当项目树中既无 AGENTS.md 也无 CLAUDE.md 时，作为第三级回退被查找；行为正常
+- **官方文档已不收录**：最新 rules 文档（opencode.ai/docs/rules/）只提 AGENTS.md 与 CLAUDE.md（兼容回退），全文未出现 CONTEXT.md
+- **官方规格明确标注 deprecated**：仓库 specs/v2/session.md 的 V2 对照清单写明 "Decide whether V2 also discovers legacy CLAUDE.md and deprecated CONTEXT.md"——V2 架构下是否继续支持仍未决定，地位不保
+- **无移除时间表**：GitHub 无正式移除公告；"will be removed" 仅见第三方 OCX 文档转述
+- 官方自己根目录也放 CONTEXT.md，但用于存领域模型术语（人类/被阅读），非注入规则
+
+**结论**：新项目勿用 CONTEXT.md 承载规则，统一 AGENTS.md；需自动注入的自定义 md 用 `opencode.json` 的 `instructions` 字段，不受 deprecated 影响。
