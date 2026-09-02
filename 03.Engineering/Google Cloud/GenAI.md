@@ -1,7 +1,7 @@
 ---
 tags: type/quicknote
 status: unread
-creation date: 2023-09-14
+created: 2023-09-14
 ---
 
 AI Infra eco system**

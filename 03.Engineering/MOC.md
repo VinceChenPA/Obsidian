@@ -14,6 +14,7 @@
 ## 云平台
 ### Google Cloud
 - [[03.Engineering/Google Cloud/Cloud Data Fusion|Cloud Data Fusion]]
+- [[03.Engineering/Google Cloud/GenAI|GenAI（Vertex AI / Duet AI 生态）]]
 - [[03.Engineering/Google Cloud/Product Service Assessment|Product Service Assessment]]
 
 ## 容器与编排

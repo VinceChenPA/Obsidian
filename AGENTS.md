@@ -29,7 +29,9 @@
 
 - **语言**：笔记以简体中文为主，技术名词可保留英文
 - **新建笔记**：`# 标题` 与文件名一致；主动链接相关已有笔记；健康类一律放 `05.Health/`
-- **frontmatter**：统一使用 `tags` / `created` / `updated` / `status` / `source` 键，tags 填真实值不要留空
+- **frontmatter**：统一使用 `tags` / `created` / `updated` / `status` / `source` 五键；tags 至少含一个 `type/*` 类型标签
+- **tag 体系**：`type/note`（普通笔记）、`type/quicknote`（快速捕获，`status: unread` 待消化，统一暂存 `03.Engineering/Common_Area/quicknote.md`）、`type/log`（日期日志）；其余为主题词
+- **日志**：`00.DailyLogs/` 只放日期文件（`YYYY-MM-DD.md`），非日期内容请归入主题目录
 - 不确定放哪个目录时询问用户，不要自作主张
 
 ## 环境

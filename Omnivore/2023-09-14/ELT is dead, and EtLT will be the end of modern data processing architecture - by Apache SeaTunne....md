@@ -1,4 +1,6 @@
 ---
+created: 2023-09-14
+tags: type/note
 id: 6d250082-db7f-45e9-b0e0-3e4fd75d730e
 ---
 
@@ -29,4 +31,3 @@ id: 6d250082-db7f-45e9-b0e0-3e4fd75d730e
 > * T Phase: Led by data analysts, business SQL developers, and AI engineers who possess a deep understanding of enterprise business rules. They convert business rules into SQL statements to perform analysis and statistics on the underlying structured data, ultimately achieving data analysis within the enterprise and enabling AI applications. Their focus is on data logic relationships, data quality, and meeting business requirements for final data results.
 > 
 > ##  [⤴️](https://omnivore.app/me/elt-is-dead-and-et-lt-will-be-the-end-of-modern-data-processing--18a91dfde18#375848a5-b8fb-49a8-bba5-a5d5ff55d071)  ^375848a5
-
