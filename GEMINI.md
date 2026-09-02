@@ -22,15 +22,17 @@ This is my personal knowledge base, also known as a "second brain," managed with
 
 ## Directory Structure
 
-*   `00.DailyLogs`: Fleeting notes, daily thoughts, and quick captures.
+*   `00.DailyLogs`: Daily notes and journal entries.
 *   `01.ReadingLogs`: Notes and summaries from books, articles, and other content I consume.
-*   `02.Domain`: In-depth knowledge on specific subjects (e.g., technology, health).
+*   `02.Domain`: In-depth knowledge on specific subjects (e.g., finance, BASEL 3).
 *   `03.Engineering`: Topics related to software engineering and my professional work.
 *   `04.Career`: Notes and reflections on career development.
-*   `05.Health`: Health-related topics.
+*   `05.Health`: Health-related topics (cardiology, traditional Chinese medicine).
 *   `06.Personal`: Personal projects, goals, and ideas.
 *   `99.Attachments`: Images and other attachments. Please place new attachments here.
 *   `Templates`: Note templates.
+
+Start navigation from `Home.md` for an overview. Note: wikilinks in this vault use full paths (e.g., `[[05.Health/中医/风寒|风寒]]`); when moving or renaming files, update all referencing links accordingly.
 
 ## How You Can Help
 
