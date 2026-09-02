@@ -22,6 +22,7 @@
 ## AI 辅助开发
 - [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD) — 工具对比与实操指南]]
+- [[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系（AGENTS/CONTEXT/CLAUDE）]]
 
 ## 通用工具
 ### Git
