@@ -64,6 +64,55 @@ OPTIONS (
 );
 ```
 
+## 在 dbt macro 中使用外部表 DDL
+
+可以。macro 是 SQL 模板，外部表 DDL 可在宏中执行：
+
+```sql
+-- macros/create_my_external.sql
+{% macro create_my_external_table() %}
+  {% set ddl %}
+    CREATE OR REPLACE EXTERNAL TABLE `project.dataset.my_table`
+    OPTIONS (
+      format = 'PARQUET',
+      uris = ['gs://my-bucket/path/*.parquet']
+    )
+  {% endset %}
+  {% do run_query(ddl) %}
+{% endmacro %}
+```
+
+调用方式：
+
+- **hooks**：`+on-run-start: "{{ create_my_external_table() }}"`（最常用）
+- **自定义 materialization**：在 `{{ materialization }}` 块中拼 DDL 并 `run_query`
+- **动态生成**：宏支持循环/参数化，按表名、格式等动态拼出多个外部表 DDL，比 yaml 静态配置灵活
+
+注意：外部表是独立于 dbt 关系的 DDL，宏中不能对其使用 `ref()`。若只是普通建表，优先用内置 `materialized='external'`。
+
+## 需要给出 column 列表吗
+
+视方式而定：
+
+- **原生 DDL / 内置 external**：column 列表可选。
+  - Parquet / Avro / ORC 自带 schema，BigQuery 自动读取，无需（也不可自定义）列定义
+  - CSV / JSON 无 schema：省略则自动检测（类型推断可能不准），也可显式声明精确控制：
+
+    ```sql
+    CREATE OR REPLACE EXTERNAL TABLE `project.dataset.my_table`
+    (
+      app_id STRING,
+      platform STRING,
+      event_date DATE
+    )
+    OPTIONS (
+      format = 'CSV',
+      uris = ['gs://my-bucket/path/*.csv']
+    );
+    ```
+
+- **dbt-external-tables 包**：一般要求列出全部 columns（CSV 列顺序必须与文件一致；Parquet 等按列名匹配）。
+
 ## 参考资料
 
 - [BigQuery 外部表介绍](https://docs.cloud.google.com/bigquery/docs/external-tables)
