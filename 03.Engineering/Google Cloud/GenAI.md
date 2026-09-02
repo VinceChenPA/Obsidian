@@ -1,6 +1,8 @@
 ---
-tags: type/quicknote
-status: unread
+tags:
+  - type/note
+  - gcp
+  - ai
 created: 2023-09-14
 ---
 

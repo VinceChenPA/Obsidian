@@ -11,8 +11,7 @@
 
 ### 阅读与输入
 - [[01.ReadingLogs/MOC|阅读笔记 · 内容地图]] — 读书笔记与文章摘要
-- 每日日志（00.DailyLogs/）— 按日期命名，如 `2026-04-23`
-- Omnivore/ — Omnivore 导入、待消化的文章
+- 每日日志（00.DailyLogs/）— 按日期命名（`YYYY-MM-DD.md`）
 
 ### 领域与职业
 - [[02.Domain/MOC|领域知识 · 内容地图]] — 金融（BASEL 3）

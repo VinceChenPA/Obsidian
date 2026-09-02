@@ -1,6 +1,9 @@
 ---
 created: 2023-09-14
-tags: type/note
+tags:
+  - type/note
+  - reading/books
+  - career/management
 Book: The Manager's Path
 Category: Career Development
 ---

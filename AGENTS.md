@@ -21,7 +21,8 @@
 - `06.Personal/` — 个人项目与思考，含 `MOC.md`
 - `99.Attachments/` — 附件（图片等）
 - `Templates/` — 笔记模板
-- `Omnivore/` — Omnivore 导入、待消化的文章
+
+> 外部导入/速记内容消化后统一转为对应主题笔记（读入类放 `01.ReadingLogs/`），不留原始导入目录。
 
 每个主分类内都有 `MOC.md`（内容地图），先读对应 MOC 再操作。
 

@@ -1,5 +1,7 @@
 ---
-tags: type/note
+tags:
+  - type/note
+  - career/interview
 created: 2023-09-14 09:47
 updated: 星期四 14日 九月 2023 09:47:18
 ---
