@@ -21,7 +21,8 @@
 - [[03.Engineering/k8s/k8s|Kubernetes]]
 
 ## AI 辅助开发
-- [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
+- [[03.Engineering/Common_Area/AI/MOC|AI 辅助开发 · 内容地图（方法论 / Agent / 工作流）]]
+- [[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
 - [[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解（7 阶段 + 命令顺序）]]
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD) — 工具对比与实操指南]]
 - [[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排 — grill-with-docs × OpenSpec × Matt ticket flow]]

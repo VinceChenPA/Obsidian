@@ -12,7 +12,7 @@ source: DeepSeek Harness 使用实践总结（会话经验）
 # DeepSeek Harness 最佳实践
 
 > 软件工程师视角下的 DSH（DeepSeek Harness）使用模式，基于 2026-09-06 实际操作经验整理。
-> 相关笔记：[[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系]]、[[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
+> 相关笔记：[[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系]]、[[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
 
 ## 核心心智模型
 

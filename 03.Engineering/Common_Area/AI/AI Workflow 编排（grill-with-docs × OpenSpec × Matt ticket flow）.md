@@ -109,5 +109,5 @@ openspec validate <slug> && openspec archive
 
 - 本地 Matt Pocock skills 仓库：`~/oc_ws/github_repos/skills`（旧,阿里云服务器）；2026-09-06 起本机镜像 `D:\Sources\skills`（v1.2.3 tag，skills/engineering/{to-spec,to-tickets,implement,code-review,grill-with-docs}）
 - 技能安装位置：`~/.config/opencode/skills/` 为子集；`~/.agents/skills/` 已装 v1.2 全集（grill-with-docs 委托 grilling + domain-modeling）
-- [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills]]
+- [[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills]]
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD)]]

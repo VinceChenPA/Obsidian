@@ -11,7 +11,7 @@ source: https://www.aihero.dev/posts
 # Matt Pocock AI 工作流详解
 
 > 7 阶段宏观框架 + 核心 pipeline 命令顺序(v1.2.3)。记录于 2026-09-03,2026-09-06 按 skills 仓库 **v1.2.3** tag 复核。综合 Matt Pocock 2026-04 "AI Coding for Real Engineers" 研讨会、aihero.dev 官方文档、skills 仓库 release notes 整理。
-> 相关笔记: [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development]]
+> 相关笔记: [[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development]]
 
 ## 核心论点
 
@@ -131,7 +131,7 @@ npx skills add mattpocock/skills --skill=grill-me -y -g   # 单个
 
 - `~/.agents/skills/` 已装仓库技能 **19 项**(另含 `find-skills` 本仓库外技能,共 20):grill 族 grill-me / grilling / grill-with-docs、工程流 to-spec / to-tickets / implement / triage / wayfinder / improve-codebase-architecture、审查与建模 code-review / codebase-design / domain-modeling / diagnosing-bugs / prototype / research、执行 tdd / handoff / teach / to-questionnaire。
 - `~/.config/opencode/skills/` 为其中子集(grill 族 + tdd/implement/to-spec/to-tickets/code-review/domain-modeling/teach),`~/.claude/skills/` 与 `.agents` 同步。
-- 即 v1.1 时"缺下游"的状况已不存在,本机已覆盖完整 pipeline。仓库级工程流:`.agents/skills/`(与全局路径并存)。上游源码镜像:`D:\Sources\skills`(对应 v1.2.3 tag),安装与来源记录见 [[03.Engineering/Common_Area/matt-pocock-skills-installation-notes|安装记录]]。
+- 即 v1.1 时"缺下游"的状况已不存在,本机已覆盖完整 pipeline。仓库级工程流:`.agents/skills/`(与全局路径并存)。上游源码镜像:`D:\Sources\skills`(对应 v1.2.3 tag),安装与来源记录见 [[03.Engineering/Common_Area/AI/matt-pocock-skills-installation-notes|安装记录]]。
 
 ## 慎用提醒
 

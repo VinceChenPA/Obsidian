@@ -37,4 +37,4 @@
 
 ## 使用方法
 
-opencode 重启后自动发现,用户说"盘问我"/"grill me" 或 "domain modeling"/"领域建模" 即可触发;完整流程技能(to-spec → to-tickets → implement → code-review)见 [[03.Engineering/Common_Area/matt-pocock-skills|方法论]]。
+opencode 重启后自动发现,用户说"盘问我"/"grill me" 或 "domain modeling"/"领域建模" 即可触发;完整流程技能(to-spec → to-tickets → implement → code-review)见 [[03.Engineering/Common_Area/AI/matt-pocock-skills|方法论]]。
