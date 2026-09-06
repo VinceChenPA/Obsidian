@@ -43,7 +43,7 @@ DSH 的核心价值 = 上下文隔离（subagent）+ 并行 fan-out（workflow�
 
 | 场景 | 技能 |
 |---|---|
-| 写新功能 | `tdd`（红-绿-重构，强制可验证） |
+| 写新功能 | `tdd`（红-绿切片、seam 处测试；v1.2.3 起重构归 `code-review`，不再属 tdd 阶段） |
 | 审 PR / 分支 / WIP | `code-review`（并行跑 Standards 与 Spec 两条线，对照报告） |
 | 疑难 bug / 性能回退 | `diagnosing-bugs`（完整诊断循环） |
 | 查 API / 文档事实 | `research`（高可信一手来源，落成 markdown） |
