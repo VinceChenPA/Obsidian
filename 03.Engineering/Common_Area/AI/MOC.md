@@ -18,6 +18,8 @@
 
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
 - [[03.Engineering/Common_Area/AI/copilot vs opencode|copilot vs opencode]]
+- [[03.Engineering/Common_Area/AI/MCP|MCP 协议]]
+- [[03.Engineering/Common_Area/AI/Snippets|AI 编程环境五层概念（Rules/Memories/MCP/Skill/Workflow）]]
 
 ## 职业与观点
 
