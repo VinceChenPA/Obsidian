@@ -11,7 +11,7 @@ source: https://www.aihero.dev/posts
 # Matt Pocock AI 工作流详解
 
 > 7 阶段宏观框架 + 核心 pipeline 命令顺序(v1.1)。记录于 2026-09-03,综合 Matt Pocock 2026-04 "AI Coding for Real Engineers" 研讨会、aihero.dev 官方文档、skills 仓库 v1.1 release notes 整理。
-> 相关笔记: [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt 票流）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development]]
+> 相关笔记: [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development]]
 
 ## 核心论点
 
@@ -33,11 +33,11 @@ source: https://www.aihero.dev/posts
 | 2. Research(可选) | 探索外部依赖(API 集成等) | `research.md` 缓存 — 只在本次迭代存活,防腐烂误导 agent |
 | 3. Prototype(可选) | 用一次性原型定 UI/体验/架构口味 | 可提交的 prototype 代码(可并入正式实现) |
 | 4. Spec(PRD) | 文档化终点状态 | 产品需求文档(问题/方案/用户故事/实现决策/测试决策/out-of-scope) |
-| 5. Tickets(Kanban) | 拆成带阻塞关系的工单 | 垂直切片任务列表(GitHub Issues / Linear / 本地 md) |
-| 6. Execution | 真正构建 | 工作代码(逐票实现,常 AFK 跑) |
+| 5. Tickets(Kanban) | 拆成带阻塞关系的 ticket | 垂直切片任务列表(GitHub Issues / Linear / 本地 md) |
+| 6. Execution | 真正构建 | 工作代码(逐 ticket 实现,常 AFK 跑) |
 | 7. QA | 人验证 | QA 计划 + 反馈 → 回 Kanban 循环(6-7 反复迭代) |
 
-注:AI 倾向按水平层实现(先 DB → 再 API → 再前端),集成问题到最后才暴露;应拆成**垂直切片/曳光弹**,每个票跨全部层,立即得到完整反馈闭环,还可并行。
+注:AI 倾向按水平层实现(先 DB → 再 API → 再前端),集成问题到最后才暴露;应拆成**垂直切片/曳光弹**,每个 ticket 跨全部层,立即得到完整反馈闭环,还可并行。
 
 ## 三、命令顺序(核心 pipeline)
 
@@ -56,8 +56,8 @@ npx skills add mattpocock/skills --skill=grill-me -y -g   # 单个
 ① /grill-with-docs   有代码库:访谈 + 边问边写 CONTEXT.md + ADR(推荐默认)
    或 /grill-me       无代码库 / 非编码事项:纯访谈,零文件,stateless
 ② /to-spec           把访谈会话直接合成规范(原 to-prd,改名统一叫 spec)
-③ /to-tickets        把 spec 切成曳光弹垂直切片工单,带阻塞边(原 to-issues)
-④ /implement         逐 frontier 票实现(TDD:red → green → refactor)
+③ /to-tickets        把 spec 切成曳光弹垂直切片 ticket,带阻塞边(原 to-issues)
+④ /implement         逐 frontier ticket 实现(TDD:red → green → refactor)
 ⑤ /code-review       全新会话 + 更强模型审查 diff
 ```
 
@@ -67,7 +67,7 @@ npx skills add mattpocock/skills --skill=grill-me -y -g   # 单个
 /wayfinder → /to-spec → /to-tickets → /implement
 ```
 
-- /wayfinder 在 issue tracker 上画 `wayfinder:map` 决策图:每个工单是"一个问题"(decision ticket),按 HITL(grilling/prototype)或 AFK(research)分型,逐张解析直到路径清晰;雾区(fog of war)随解析逐步明朗。
+- /wayfinder 在 issue tracker 上画 `wayfinder:map` 决策图:每个 ticket 是"一个问题"(decision ticket),按 HITL(grilling/prototype)或 AFK(research)分型,逐张解析直到路径清晰;雾区(fog of war)随解析逐步明朗。
 - 地图清空即交接(mattpocock 2026-08 发推确认上述顺序;若发现任务其实很小可直接 /implement)。
 - 其他路由参考:决策已清 → 直接 /to-spec;已有会话过大 → /handoff。
 
@@ -82,15 +82,15 @@ npx skills add mattpocock/skills --skill=grill-me -y -g   # 单个
 
 **② 写 spec** — 终点文档:问题、方案、用户故事、实现决策、测试决策、out-of-scope。产出后不反复打磨文档,靠"信任 agent 摘要 + 盯模块划分是否贴合现有代码库"。
 
-**③ 拆 tickets** — 垂直切片,每票声明阻塞边与验收标准、测试要求、HITL/AFK 分类;DAG 化才能多 agent 并行。
+**③ 拆 tickets** — 垂直切片,每 ticket 声明阻塞边与验收标准、测试要求、HITL/AFK 分类;DAG 化才能多 agent 并行。
 
 **④ 实现** — TDD 红-绿-重构:先写失败测试,防止 agent 事后写出"附和已实现代码"的假测试。执行形态:
-- 人工逐票执行;或 Ralph loop(bash 循环:给 agent 本地票文件 + 近期 commit + 实现提示词);或 AFK agent(Docker 沙箱,先单次迭代观察调提示词再信任长跑)。
+- 人工逐 ticket 执行;或 Ralph loop(bash 循环:给 agent 本地 ticket 文件 + 近期 commit + 实现提示词);或 AFK agent(Docker 沙箱,先单次迭代观察调提示词再信任长跑)。
 - 实现提示词约定:任务选择优先级、探索仓库、TDD、跑反馈循环(类型检查/测试);错误信息与测试失败必须自动回传。
 
 **⑤ 审查** — 关键原则:**全新上下文**(自己的聪明区)里审查,而非实现会话耗尽后;审查模型 ≥ 实现模型(Pocock 实践:Sonnet 实现 / Opus 审查)。标准分发:pull vs push —— 实现者按需拉取技能规范,审查者被直接推给质量规范逐条对照。自动化可以,但人类负责 QA 与代码 review(审美与架构判断)。
 
-**其他常用技能**:/research(子 agent 外部调研,不占主上下文)、/prototype、/handoff(会话交接/压缩)、/triage(杂务整理成票)、/improve-codebase-architecture(找浅模块→深模块重构)、/ask-matt(路由:不知用哪个就问)、/domain-modeling(统一语言维护)。
+**其他常用技能**:/research(子 agent 外部调研,不占主上下文)、/prototype、/handoff(会话交接/压缩)、/triage(杂务整理成 ticket)、/improve-codebase-architecture(找浅模块→深模块重构)、/ask-matt(路由:不知用哪个就问)、/domain-modeling(统一语言维护)。
 
 ## 五、v1.1 变更(vs v1.0)
 

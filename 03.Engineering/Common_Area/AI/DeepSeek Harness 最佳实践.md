@@ -12,7 +12,7 @@ source: DeepSeek Harness 使用实践总结（会话经验）
 # DeepSeek Harness 最佳实践
 
 > 软件工程师视角下的 DSH（DeepSeek Harness）使用模式，基于 2026-09-06 实际操作经验整理。
-> 相关笔记：[[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt 票流）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系]]、[[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
+> 相关笔记：[[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解]]、[[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排]]、[[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系]]、[[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
 
 ## 核心心智模型
 
@@ -69,4 +69,4 @@ DSH 的核心价值 = 上下文隔离（subagent）+ 并行 fan-out（workflow�
 
 ## 六、与既有方法论的关系
 
-与 Matt Pocock 流程同构：plan/spec ≈ 4. Spec 阶段，subagent 调研 ≈ 2. Research，垂直切片 + 逐票实现 ≈ 5-6 阶段；DSH 的 `goal`/`workflow` 提供了"票的并行执行层"，`skill` 体系则是 repo 内 `.agents/skills/` 的会话内等价物。核心约束一致：**切小、可验证、文件即接口、频繁干净重置**。
+与 Matt Pocock 流程同构：plan/spec ≈ 4. Spec 阶段，subagent 调研 ≈ 2. Research，垂直切片 + 逐 ticket 实现 ≈ 5-6 阶段；DSH 的 `goal`/`workflow` 提供了"ticket 的并行执行层"，`skill` 体系则是 repo 内 `.agents/skills/` 的会话内等价物。核心约束一致：**切小、可验证、文件即接口、频繁干净重置**。

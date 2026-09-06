@@ -24,7 +24,7 @@
 - [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
 - [[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解（7 阶段 + 命令顺序）]]
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD) — 工具对比与实操指南]]
-- [[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt 票流）|AI 工作流编排 — grill-with-docs × OpenSpec × Matt 票流]]
+- [[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排 — grill-with-docs × OpenSpec × Matt ticket flow]]
 - [[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系（AGENTS/CONTEXT/CLAUDE）]]
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
 
