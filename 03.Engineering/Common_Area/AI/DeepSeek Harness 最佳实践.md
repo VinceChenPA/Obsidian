@@ -2,8 +2,8 @@
 tags:
   - type/note
   - AI编码
-  - DeepSeek Harness
-  - Agent 编排
+  - DeepSeek-Harness
+  - Agent-编排
 created: 2026-09-06
 updated: 2026-09-06
 status: done
