@@ -26,6 +26,7 @@
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD) — 工具对比与实操指南]]
 - [[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt 票流）|AI 工作流编排 — grill-with-docs × OpenSpec × Matt 票流]]
 - [[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系（AGENTS/CONTEXT/CLAUDE）]]
+- [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
 
 ## 通用工具
 ### Git
