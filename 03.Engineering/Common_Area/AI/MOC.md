@@ -14,6 +14,10 @@
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD) — 工具对比与实操指南]]
 - [[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系（AGENTS/CONTEXT/CLAUDE）]]
 
+## Agent 循环与自动化
+
+- [[03.Engineering/Common_Area/AI/Loop-Engineering|Loop Engineering（循环工程）— 概念与 opencode 支持映射]]
+
 ## 工具与 Harness 实践
 
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
