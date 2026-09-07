@@ -17,6 +17,7 @@
 ## Agent 循环与自动化
 
 - [[03.Engineering/Common_Area/AI/Loop-Engineering|Loop Engineering（循环工程）— 概念与 opencode 支持映射]]
+- [[03.Engineering/Common_Area/AI/Loop-Engineering-Opencode-Research|Loop Engineering with opencode — 一手来源研究报告（官方能力/缺口/框架/配方）]]
 
 ## 工具与 Harness 实践
 

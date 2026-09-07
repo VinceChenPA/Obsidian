@@ -114,6 +114,7 @@ Loop 的力量不在任何单独步骤，而在于**闭环**：测试失败不�
 
 ## 相关笔记
 
+- [[03.Engineering/Common_Area/AI/Loop-Engineering-Opencode-Research|Loop Engineering with opencode — 一手来源研究报告]]
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD)]]
 - [[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系]]
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践]]
