@@ -7,6 +7,7 @@
 - [[03.Engineering/SQL/MOC|SQL]]
 ### dbt
 - [[03.Engineering/dbt/dbt introduction|dbt 介绍]]
+- [[03.Engineering/dbt/dbt BigQuery 外部表|dbt BigQuery 外部表]]
 - [[03.Engineering/dbt/dbt adoption|dbt 采纳指南]]
 - [[03.Engineering/dbt/presentation|dbt 演示文稿]]
 - [[03.Engineering/Apache Iceberg/Apache Iceberg|Apache Iceberg]]
