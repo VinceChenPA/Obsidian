@@ -1,4 +1,5 @@
 ---
+created: 2026-08-29
 tags:
   - engineering/dbt
   - engineering/bigquery

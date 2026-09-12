@@ -1,8 +1,10 @@
 # Matt Pocock Skills · AI 编码代理方法论
 
-**来源**: [mattpocock/skills](https://github.com/mattpocock/skills) （68k+ stars）
-**设计目标**: 给 Claude Code / 终端编码代理使用的斜杠命令集，解决 AI 编码中的常见失败模式。
+**来源**: [mattpocock/skills](https://github.com/mattpocock/skills) （2026-09-06 核对至 **v1.2.3**）
+**设计目标**: 给 Claude Code / Codex / 其他终端编码代理使用的斜杠命令集，解决 AI 编码中的常见失败模式。
+**分发方式**: Claude Code 官方插件（`claude plugins install mattpocock-skills`，托管只读、自动更新）或 skills.sh 复制可编辑文件（`npx skills@latest add mattpocock/skills`，支持 Codex 等，含 `agents/openai.yaml` Codex 元数据）。
 **核心理念**: 小而精、可组合、基于软件工程经典原理（DDD、TDD、Pragmatic Programmer）。
+**技能分类轴**: **User-invoked**（只能人敲，负责编排）/ **Model-invoked**（模型可自动调用，承载可复用纪律）；按目录分桶 `engineering/`、`productivity/`（随插件发布）+ `misc/`、`in-progress/`（beta 不发布）、`deprecated/`（空）。
 
 ---
 
@@ -18,7 +20,7 @@
 
 ### #3 代码跑不通
 - **问题**: 代理写代码没有反馈回路，盲目编码
-- **解法**: TDD 红-绿-重构循环 + Diagnose 调试流程
+- **解法**: 反馈回路（静态类型、浏览器、自动化测试）+ `/tdd` 红-绿-重构 + `/diagnosing-bugs` 调试回路
 
 ### #4 代码变成泥球
 - **问题**: AI 加速软件熵，代码迅速腐化
@@ -26,34 +28,72 @@
 
 ---
 
-## Skills 全景
+## Skills 全景（v1.2.3）
 
-### 工程类（核心）
+按目录分桶：`engineering/`（代码工作）、`productivity/`（非代码工作流）、`misc/`（保留不推广）、`in-progress/`（beta 通道）、`deprecated/`（已弃用，现空）。随 Claude Code 插件发布的是 **engineering + productivity** 两桶。
+
+### engineering/（代码工作，每日使用）
+
+**User-invoked（只能手动触发，负责编排）**
 
 | Skill | 一句话 | 最佳使用时机 |
 |---|---|---|
-| `/grill-with-docs` | **盘问 + 建领域词典 + ADR** 三位一体 | 每次开始新功能前 |
-| `/grill-me` | 精简版盘问（不写文档） | 快速对齐想法 |
-| `/tdd` | 红-绿-重构 + 垂直切片（一个测试→一段代码） | 开发功能、修 Bug |
-| `/diagnose` | 6 阶段调试法（反馈回路→复现→假设→插桩→修复→复盘） | 难复现的 Bug、性能退化 |
-| `/improve-codebase-architecture` | 用 Deep Module 理论找重构机会 | 每几天跑一次 |
-| `/triage` | Issue 状态机管理（GitHub/Linear/本地） | 处理 Issue |
-| `/to-prd` | 对话内容 → PRD → 发布到 Issue Tracker | 需求确认后 |
-| `/to-issues` | 计划/PRD → 垂直切片 Issue 列表 | 拆分任务 |
-| `/prototype` | 快速原型验证（Logic 终端 / UI 多方案） | 设计不确定时 |
-| `/zoom-out` | 让代理跳出局部给全局视角 | 遇到不熟悉的代码 |
-| `/setup-matt-pocock-skills` | 一次性初始化项目配置 | 新项目首次使用 |
+| `/ask-matt` | 路由：问"该用哪个技能/流程" | 不确定用哪个 |
+| `/grill-with-docs` | **盘问 + 建 CONTEXT.md + 更新 ADR** 三位一体 | 每次开始新功能前（有代码库时） |
+| `/triage` | Issue/外部 PR 状态机管理 | 处理流入的 issue |
+| `/improve-codebase-architecture` | 扫描代码库找深化机会 → HTML 报告 → 盘问选中项 | 每几天跑一次 |
+| `/setup-matt-pocock-skills` | 一次性初始化 repo 配置（issue tracker/triage labels/domain docs） | 新 repo 首次使用工程技能前 |
+| `/to-spec` | 当前会话 → spec 发布到 issue tracker | 需求确认后（不盘问，只综合） |
+| `/to-tickets` | spec/计划 → 曳光弹垂直切片 tickets（声明阻塞边） | 拆分任务 |
+| `/implement` | 逐 ticket 构建，内部驱动 `/tdd`，收尾跑 `/code-review` | 执行阶段 |
+| `/wayfinder` | 超大会话的共享决策图（decision tickets），逐张解析到路径清晰 | 巨型任务、路线不明 |
 
-### 效率类
+**Model-invoked（模型或人都可触发，承载可复用纪律）**
+
+| Skill | 一句话 | 最佳使用时机 |
+|---|---|---|
+| `/tdd` | 红-绿-重构 + 垂直切片（seam 处测试） | 开发功能、修 Bug |
+| `/diagnosing-bugs` | 纪律化调试回路（反馈回路→最小化→假设→插桩→修复→回归测试） | 难复现的 Bug、性能退化 |
+| `/code-review` | 双轴并行审查：Standards（含 Fowler smell 基线）+ Spec | 提交前审 diff |
+| `/codebase-design` | 深模块词汇（module/interface/depth/seam/adapter） | 设计模块接口 |
+| `/domain-modeling` | 打磨领域语言，维护 CONTEXT.md + ADR | 术语含糊时 |
+| `/research` | 后台 agent 查一手来源，产出带引用的 Markdown | 委托阅读调研 |
+| `/prototype` | 一次性原型回答设计问题（单个共享 HTML / 多套 UI 变体） | 设计不确定时 |
+| `/resolving-merge-conflicts` | 逐 hunk 按意图解决 merge/rebase 冲突 | 已在冲突中 |
+| `/wizard` | 生成交互 bash wizard，引导人类完成仅人能做的步骤 | 配凭据/CI secrets/第三方面板/一次性迁移 |
+
+### productivity/（非代码工作流）
+
+**User-invoked**
 
 | Skill | 作用 |
 |---|---|
-| `/caveman` | 极简模式，减少 75% token 消耗 |
-| `/write-a-skill` | 创建新 skill 的脚手架 |
+| `/grill-me` | 无状态盘问（不写 CONTEXT.md/ADR，无 working directory 时用） |
+| `/handoff` | 把当前会话压成交接文档给另一 agent（仅跨 harness/目录/同事时用） |
+| `/teach` | 多会话教学，用当前目录做有状态工作区 |
+| `/to-questionnaire` | 无法独自回答的决策 → 变成问卷发给能回答的人 |
+| `/wait-what` | 一句话没懂时：用 CONTEXT.md 词汇、简练英文重讲一遍 |
 
-### 杂项
+**Model-invoked**
 
-`git-guardrails`（防误操作提交）、`migrate-to-shoehorn`（迁移类型断言）、`scaffold-exercises`、`setup-pre-commit`
+| Skill | 作用 |
+|---|---|
+| `/grilling` | 盘问原语（round-by-round frontier），grill-me/grill-with-docs/triage/wayfinder 的底层 |
+| `/writing-for-agents` | 写 agent 消费的文档（skills、AGENTS.md/CLAUDE.md、指针指向的 docs） |
+
+### 其他桶（不随插件发布）
+
+- **misc/**：`git-guardrails-claude-code`（防误操作提交）、`migrate-to-shoehorn`（迁移类型断言）、`scaffold-exercises`、`setup-pre-commit`
+- **in-progress/**（beta）：`claude-handoff`、`loop-me`、`setup-ts-deep-modules`、`writing-beats`、`writing-fragments`、`writing-shape`
+- **deprecated/**：空
+
+### 历史更名速查（读旧文用）
+
+- `to-prd` → `to-spec`；`to-plan`/`to-issues` 合并 → `to-tickets`（v1.1）
+- `diagnose` → `diagnosing-bugs`；`caveman`、`zoom-out` 删除（v1.0）
+- `write-a-skill` → `writing-great-skills` → `writing-for-agents`（v1.2，还管 AGENTS/CLAUDE 文档）
+- `decision-mapping` → `wayfinder`（v1.1）；`ubiquitous-language` → `domain-modeling`、`design-an-interface` → `codebase-design`、`qa` → `triage`+`to-tickets`、`request-refactor-plan` → `to-spec`+`improve-codebase-architecture`（v1.2）
+- `review`(in-progress) → `code-review`（v1.1）；`grill-with-docs` 不再"内联 domain-modeling"，而是独立技能协作
 
 ---
 
@@ -257,7 +297,7 @@ description: 盘问设计方案。Use when 用户说"盘问我"或"grill me"。
 |---|---|---|---|
 | grill-me | `/grill-me` 或 "盘问我" | `/grill-me` 或 "盘问我" | "盘问我"或 "grill me" |
 | tdd | `/tdd` 或 "tdd" | `/tdd` 或 "tdd" | "用 TDD 方式写" |
-| diagnose | `/diagnose` 或项目自然语言 | `/diagnose` | "按 diagnose 流程调试" |
+| diagnosing-bugs | `/diagnosing-bugs` 或"调试这个 bug" | `/diagnosing-bugs` | "按 diagnosing-bugs 流程调试" |
 
 **关键原则**：`.agents/skills/` 是共享源（opencode + Claude Code 原生加载），`CLAUDE.md` 为 Copilot 提供同等的自然语言版本。一套技能定义，三套环境都可以使用。
 
@@ -319,9 +359,16 @@ project-root/
 ## 快速开始
 
 ```bash
-# Claude Code 用户
+# Claude Code 用户（官方插件，托管只读、自动更新）
+claude plugins install mattpocock-skills
+# 或 /plugin install mattpocock-skills
+
+# Codex / 其他代理 / 想自己改文件（复制可编辑版本）
 npx skills@latest add mattpocock/skills
-# 选择需要的 skill → 运行 /setup-matt-pocock-skills 初始化
+# 选择需要的 skill（务必含 setup-matt-pocock-skills）→ 运行 /setup-matt-pocock-skills 初始化
+
+# 只装单个 skill
+npx skills add mattpocock/skills --skill=grill-me -y -g
 
 # opencode + Copilot Agent Mode + Claude Code 三环境用户
 # 1. 创建 CONTEXT.md（最重要）

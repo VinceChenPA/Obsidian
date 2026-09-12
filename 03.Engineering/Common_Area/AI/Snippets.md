@@ -1,3 +1,12 @@
+---
+created: 2026-05-06
+updated: 2026-09-06
+tags:
+  - type/note
+  - engineering/ai
+  - AI-Config
+status: done
+---
 Rules是「准则」，Memories是「记忆」，MCP是「触手」，Skill是「技能」，那Workflow就是「习惯」，几个动作串起来形成的一套固定流程。
 
 **用一个类比串起来**
@@ -38,6 +47,8 @@ Windsurf，Rules对应.windsurf/rules/目录和.windsurfrules文件。Memories�
 
 Claude Code，Rules对应CLAUDE.md。Memories分为手动编写的CLAUDE.md和Auto Memory自动积累的笔记。MCP支持。Skill是独立的.claude/skills/目录。Workflow的功能分散在Hooks和Subagent里。
 
-很多人配了一堆东西效果反而变差，就是因为把应该放在Skill里的东西塞进了Rules，或者该用MCP解决的问题用Memories来硬扛。
+很多人配了一堆东西效果反而变差，就是因为把应该放在 Skill 里的东西塞进了 Rules，或者该用 MCP 解决的问题用 Memories 来硬扛。
 
 工具在变，概念在变，底层的设计逻辑没变。搞明白每一层在干嘛，就不会被花里胡哨的功能名搞晕了。
+
+> 相关：[[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系]]（本库落地 AGENTS.md/CONTEXT.md 的实践）、[[03.Engineering/Common_Area/AI/MCP|MCP 协议]]

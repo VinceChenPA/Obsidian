@@ -21,7 +21,8 @@
 - `06.Personal/` — 个人项目与思考，含 `MOC.md`
 - `99.Attachments/` — 附件（图片等）
 - `Templates/` — 笔记模板
-- `Omnivore/` — Omnivore 导入、待消化的文章
+
+> 外部导入/速记内容消化后统一转为对应主题笔记（读入类放 `01.ReadingLogs/`），不留原始导入目录。
 
 每个主分类内都有 `MOC.md`（内容地图），先读对应 MOC 再操作。
 
@@ -29,7 +30,10 @@
 
 - **语言**：笔记以简体中文为主，技术名词可保留英文
 - **新建笔记**：`# 标题` 与文件名一致；主动链接相关已有笔记；健康类一律放 `05.Health/`
-- **frontmatter**：统一使用 `tags` / `created` / `updated` / `status` / `source` 键，tags 填真实值不要留空
+- **frontmatter**：统一使用 `tags` / `created` / `updated` / `status` / `source` 五键；tags 至少含一个 `type/*` 类型标签
+- **tag 体系**：`type/note`（普通笔记）、`type/quicknote`（快速捕获，`status: unread` 待消化，统一暂存 `03.Engineering/Common_Area/quicknote.md`）、`type/log`（日期日志）；其余为主题词
+- **tag 命名规范**：只允许字母（含中文）/ 数字 / `_` / `-` / `/`，**禁止空格**；多词标签用连字符连接（如 `DeepSeek-Harness`、`Matt-Pocock`）——含空格的标签 Obsidian 会报"不被允许的标签名"且不登记（2026-09-06 全库审计修复）
+- **日志**：`00.DailyLogs/` 只放日期文件（`YYYY-MM-DD.md`），非日期内容请归入主题目录
 - 不确定放哪个目录时询问用户，不要自作主张
 
 ## 环境

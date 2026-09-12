@@ -1,4 +1,5 @@
 ---
+created: 2023-09-12
 tags:
   - engineering/gcp
 ---
@@ -14,4 +15,3 @@ Data Fusion is ETL service integrated with GCP data services.
 
 **Cloud Data Fusion with Cloud Composer**
 ![[Pasted image 20230912091048.png]]
-

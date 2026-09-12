@@ -1,4 +1,5 @@
 ---
+created: 2025-06-25
 tags:
   - personal/investment
   - finance/trading

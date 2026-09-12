@@ -1,6 +1,6 @@
 ---
-creation date: 2026-08-23 10:00
-modification date: 2026-08-23 10:00
+created: 2026-08-23 10:00
+updated: 2026-08-23 10:00
 tags: [领导力, HSBC, 职业发展]
 ---
 

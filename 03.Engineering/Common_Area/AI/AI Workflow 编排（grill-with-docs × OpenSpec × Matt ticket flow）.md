@@ -1,4 +1,4 @@
-# AI 工作流编排（grill-with-docs × OpenSpec × Matt 票流）
+# AI 工作流编排（grill-with-docs × OpenSpec × Matt ticket flow）
 
 > 主题：把 Matt Pocock 的 grill-with-docs / to-spec / to-tickets / implement / code-review 技能与 OpenSpec 规范驱动开发串联成一条完整交付管道。
 > 一句话：**grill 负责想、OpenSpec 负责存、to-tickets 负责拆、implement 负责做、code-review 负责查**——按顺序串联，谁强谁上，内容不重复。
@@ -23,7 +23,7 @@ Matt 流（to-spec → to-tickets → implement → code-review）与 OpenSpec �
 
 - **规范只落一处盘**：to-spec 产物是"起草输出"，转录进 `openspec/changes/<name>/` 后即 OpenSpec 为准；tracker issue 只放链接不放内容。
 - to-spec 说 "Do NOT interview"、grill-with-docs 说 "interview relentlessly"——正好前后衔接：盘问只发生在 grill 阶段，to-spec 合成时信息已齐。
-- OpenSpec 自动生成的 `tasks.md` 可忽略，以 to-tickets 的票为准；implement 逐票跑。
+- OpenSpec 自动生成的 `tasks.md` 可忽略，以 to-tickets 的 ticket 为准；implement 逐 ticket 跑。
 - 中途发现新决策 → 轻量补盘问，追加 ADR / 更新 CONTEXT.md，再 `/opsx:sync` 对齐。
 
 ## 命令顺序
@@ -39,7 +39,7 @@ npm install -g @fission-ai/openspec@latest && cd your-project && openspec init
 ③ AI：转录为 openspec change，术语对齐 CONTEXT.md、design.md 引用 ADR
 ④ to-tickets：增量 spec 拆垂直切片，确认粒度后发布
    （本地 .scratch/ 或 GitHub）
-⑤ implement：逐 frontier 票执行（tdd → typecheck → 全量测试）
+⑤ implement：逐 frontier ticket 执行（tdd → typecheck → 全量测试）
 ⑥ code-review：diff 固定点 → Standards + Spec 双轴
    （Spec 轴显式传 openspec/changes/<name>/specs/ 路径）
 
@@ -85,14 +85,14 @@ openspec validate <change> && openspec archive
    specs/*.md ← 增量 Requirement + Scenario（GIVEN-WHEN-THEN）；design.md 引用 ADR 编号
 3. tasks.md 删除或仅作速览（拆分权交给 to-tickets）
 
-### Phase 3 · 拆票
-to-tickets 基于增量 spec 拆分；验收：垂直切片、单票单上下文窗口、blocker 图经用户确认
+### Phase 3 · 拆 ticket
+to-tickets 基于增量 spec 拆分；验收：垂直切片、单 ticket 单上下文窗口、blocker 图经用户确认
 
-### Phase 4 · 逐票实施
-implement 沿 frontier 逐票（tdd → typecheck → 单测）；每票完成即勾选
+### Phase 4 · 逐 ticket 实施
+implement 沿 frontier 逐 ticket（tdd → typecheck → 单测）；每 ticket 完成即勾选
 
 ### Phase 5 · 双轴审查
-code-review：固定点 = 首票起点 commit；Spec 轴源 = openspec/changes/<slug>/specs/
+code-review：固定点 = 首 ticket 起点 commit；Spec 轴源 = openspec/changes/<slug>/specs/
 失败回 Phase 4，直到双轴通过
 
 ### Phase 6 · 收尾归档
@@ -107,7 +107,7 @@ openspec validate <slug> && openspec archive
 
 ## 参考
 
-- 本地 Matt Pocock skills 仓库：`~/oc_ws/github_repos/skills`（skills/engineering/{to-spec,to-tickets,implement,code-review,grill-with-docs}）
-- 技能安装位置：`~/.config/opencode/skills/`（grill-with-docs 委托 grilling + domain-modeling）
-- [[03.Engineering/Common_Area/matt-pocock-skills|Matt Pocock Skills]]
+- 本地 Matt Pocock skills 仓库：`~/oc_ws/github_repos/skills`（旧,阿里云服务器）；2026-09-06 起本机镜像 `D:\Sources\skills`（v1.2.3 tag，skills/engineering/{to-spec,to-tickets,implement,code-review,grill-with-docs}）
+- 技能安装位置：`~/.config/opencode/skills/` 为子集；`~/.agents/skills/` 已装 v1.2 全集（grill-with-docs 委托 grilling + domain-modeling）
+- [[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills]]
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD)]]

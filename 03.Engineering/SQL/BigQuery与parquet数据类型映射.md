@@ -1,4 +1,5 @@
 ---
+created: 2025-05-24
 tags:
   - engineering/sql
   - bigquery

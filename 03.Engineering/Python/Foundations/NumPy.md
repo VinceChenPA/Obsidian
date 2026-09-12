@@ -1,6 +1,6 @@
 ---
-creation date: 2023-09-11 23:04
-modification date: 星期一 11日 九月 2023 23:04:24
+created: 2023-09-11 23:04
+updated: 星期一 11日 九月 2023 23:04:24
 tags:
   - engineering/python
   - python/foundations
