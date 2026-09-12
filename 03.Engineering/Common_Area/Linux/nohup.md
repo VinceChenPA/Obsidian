@@ -2,7 +2,13 @@
 created: 2023-10-26
 tags:
   - engineering/linux
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
+# nohup
+
 nohup (no hang up) 用于在系统后台不挂断运行命令，退出终端不会影响程序的运行。
 
 例如某 Python 程序:

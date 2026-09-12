@@ -6,6 +6,9 @@ tags:
   - career/management
 Book: The Manager's Path
 Category: Career Development
+updated: 2026-09-03
+status: done
+source:
 ---
 
 **From an engineer to an engineering manager**

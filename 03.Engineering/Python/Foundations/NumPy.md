@@ -5,7 +5,12 @@ tags:
   - engineering/python
   - python/foundations
   - python/numpy
+  - type/note
+status: done
+source:
 ---
+# NumPy
+
 **broadcasting**
 向量和标量之间的运算
 np.array(\[1,2,3\])\*2=np.array(\[2,4,6\])

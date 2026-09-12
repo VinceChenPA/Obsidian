@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-09-02
+updated: 2026-09-03
+status: done
+source:
+---
 # AI Agent 规则文件体系（AGENTS.md / CONTEXT.md / CLAUDE.md …）
 
 > 记录于 2026-09-02，基于 opencode 1.18.9 源码（`session/instruction.ts`、`fs-util.ts`）逐行核对，v1.18.9 与 main 分支实现完全一致。

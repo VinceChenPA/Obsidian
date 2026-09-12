@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-09-12
+updated: 2026-09-12
+status: done
+source:
+---
 # LLM Wiki
 
 A pattern for building personal knowledge bases using LLMs.

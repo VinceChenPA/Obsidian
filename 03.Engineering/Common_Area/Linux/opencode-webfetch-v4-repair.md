@@ -4,7 +4,11 @@ tags:
   - webfetch
   - deepseek
   - config
+  - type/note
 created: 2026-05-22
+updated: 2026-05-22
+status: done
+source:
 ---
 
 # opencode 配置与 webfetch 修复 2026-05-22

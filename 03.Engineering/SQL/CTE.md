@@ -2,6 +2,10 @@
 created: 2026-05-04
 tags:
   - engineering/sql
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 # Common Table Expression (CTE)
 

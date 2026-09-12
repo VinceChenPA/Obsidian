@@ -3,6 +3,10 @@ created: 2025-05-24
 tags:
   - engineering/sql
   - bigquery
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 # BigQuery 与 Parquet 数据类型映射
 

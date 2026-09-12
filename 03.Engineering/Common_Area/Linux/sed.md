@@ -2,6 +2,10 @@
 created: 2023-10-26
 tags:
   - engineering/linux
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 之前得推文中介绍了grep和awk这两个Linux常用得模式匹配、字符搜索命令，在这篇推文中，将介绍另外一个常用得命令——sed。
 

@@ -2,6 +2,10 @@
 created: 2025-06-25
 tags:
   - engineering/data
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 # Apache Iceberg
 

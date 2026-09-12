@@ -2,7 +2,13 @@
 created: 2023-10-19
 tags:
   - engineering/dbt
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
+# dbt adoption
+
 The first steps of adopting dbt are:
 
 1. **Get familiar with dbt:** Learn about the basics of dbt, including its architecture, features, and benefits. You can do this by reading the dbt documentation, watching tutorials, and taking online courses.

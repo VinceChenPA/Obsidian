@@ -2,6 +2,10 @@
 created: 2023-10-26
 tags:
   - engineering/linux
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 **Shell**
 

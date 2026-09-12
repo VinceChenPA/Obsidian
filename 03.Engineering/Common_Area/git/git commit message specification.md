@@ -2,6 +2,10 @@
 created: 2023-09-18
 tags:
   - engineering/git
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 **Conventional CommitsSpecification**
 format

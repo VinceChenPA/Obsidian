@@ -1,7 +1,9 @@
 ---
 created: 2026-08-23 10:00
 updated: 2026-08-23 10:00
-tags: [领导力, HSBC, 职业发展]
+tags: [领导力, HSBC, 职业发展, type/note]
+status: done
+source:
 ---
 
 # HSBC "How We Lead" 领导力框架

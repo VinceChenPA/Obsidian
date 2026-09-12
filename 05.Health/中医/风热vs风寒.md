@@ -3,7 +3,13 @@ created: 2023-09-05
 tags:
   - domain/health
   - health/cold
+  - type/note
+updated: 2026-09-13
+status: done
+source:
 ---
+# 风热vs风寒
+
 #健康
 #发热
 

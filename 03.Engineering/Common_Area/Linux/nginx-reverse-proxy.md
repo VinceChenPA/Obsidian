@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-05-14
+updated: 2026-05-14
+status: done
+source:
+---
 # Nginx 反向代理配置
 
 ## 场景：opencode web 对外访问

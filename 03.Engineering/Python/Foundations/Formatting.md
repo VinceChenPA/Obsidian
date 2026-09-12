@@ -3,6 +3,11 @@ created: 2023-10-19
 tags:
   - engineering/python
   - python/foundations
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
+# Formatting
 
 **双引号表示"人类可读的文本"，单引号表示"数据"。

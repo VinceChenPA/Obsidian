@@ -6,6 +6,7 @@ tags:
   - reading/books
   - data-engineering
 source: https://blog.devgenius.io/elt-is-dead-and-etlt-will-be-the-end-of-modern-data-processing-architecture-154b87c1cce0
+status: done
 ---
 
 # EtLT：从 ELT 到 Extract-t-Load-Transform

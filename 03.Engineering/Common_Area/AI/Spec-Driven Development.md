@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-06-03
+updated: 2026-06-03
+status: done
+source:
+---
 # Spec-Driven Development (SDD)
 
 ## 概述

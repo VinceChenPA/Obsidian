@@ -1,3 +1,13 @@
+---
+tags:
+  - type/note
+created: 2026-07-13
+updated: 2026-07-13
+status: done
+source:
+---
+# copilot vs opencode
+
 综合前面几个维度（工作流、Agent、Skill、MCP、生态、适用场景）来看，GitHub Copilot 和 OpenCode 的差异已经不是“谁写代码更强”，而是两种不同的 AI 软件开发范式。
 
 

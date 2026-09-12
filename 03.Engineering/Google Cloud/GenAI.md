@@ -4,7 +4,11 @@ tags:
   - gcp
   - ai
 created: 2023-09-14
+updated: 2026-09-03
+status: done
+source:
 ---
+# GenAI
 
 AI Infra eco system**
 - Vertex AI

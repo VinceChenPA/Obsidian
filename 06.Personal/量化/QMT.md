@@ -3,6 +3,10 @@ created: 2025-06-25
 tags:
   - personal/investment
   - finance/trading
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 # QMT
 

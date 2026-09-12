@@ -2,6 +2,10 @@
 created: 2024-01-09
 tags:
   - career/interview
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 # self introduction
 **highlight 7 years in current role as SCS**
@@ -15,7 +19,6 @@ tags:
 
 > #tech_lead
 > - 技术最成熟的工程师往往会被任命作为一个项目的组长，但这个职位终究还是属于项目组，并不属于公司的管理层。这个职位相当于总工程师，要求技术宽度够广，不仅能理解每个项目组员的负责工作内容，还要能帮助并协调项目组员。
-> ![[Pasted image 20231204141135.png]]
 > - TL 在技术层面需要关注如下四件事：
 > 1. 为团队建立技术标准、并带团队遵守标准
 > 2. 关注软件设计和方案

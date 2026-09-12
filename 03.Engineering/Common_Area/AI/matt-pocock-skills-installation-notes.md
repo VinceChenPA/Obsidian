@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-06-29
+updated: 2026-09-06
+status: done
+source:
+---
 # Matt Pocock Skills - 安装记录
 
 首次安装: 2026-06-29(仅 3 项)

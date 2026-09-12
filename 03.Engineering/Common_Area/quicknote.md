@@ -2,7 +2,10 @@
 tags: type/quicknote
 status: unread
 created: 2023-09-14
+updated: 2026-09-03
+source:
 ---
+# quicknote
 
 > introduce precheckers in PR, use dbt to check sql, and write util to check json format
 

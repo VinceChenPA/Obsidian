@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-05-14
+updated: 2026-05-14
+status: done
+source:
+---
 # opencode 版本记录
 
 | 日期 | 版本 | 备注 |

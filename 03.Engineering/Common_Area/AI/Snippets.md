@@ -6,7 +6,10 @@ tags:
   - engineering/ai
   - AI-Config
 status: done
+source:
 ---
+# Snippets
+
 Rules是「准则」，Memories是「记忆」，MCP是「触手」，Skill是「技能」，那Workflow就是「习惯」，几个动作串起来形成的一套固定流程。
 
 **用一个类比串起来**

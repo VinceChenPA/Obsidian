@@ -3,7 +3,13 @@ created: 2023-09-11
 tags:
   - engineering/python
   - python/foundations
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
+# Exception
+
 ```python
 try:
     # 可能引发异常的代码

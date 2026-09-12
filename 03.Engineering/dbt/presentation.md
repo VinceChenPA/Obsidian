@@ -2,7 +2,12 @@
 created: 2023-10-19
 tags:
   - engineering/dbt
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
+# presentation
 
 dbt (data build tool) is an open-source data transformation tool that helps data analysts and engineers build and maintain reliable and scalable data pipelines, without worrying about execution orchestration. it focus on transformation, left el to emf.  It is a command-line tool that uses SQL and Jinja2 a templating language to transform data in modern data warehouses, such as Amazon Redshift, Google BigQuery, and Snowflake. an important point, dbt run is working on an existing dataset.
 

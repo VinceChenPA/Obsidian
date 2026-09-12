@@ -2,6 +2,10 @@
 created: 2023-10-19
 tags:
   - engineering/dbt
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 # dbt 介绍
 

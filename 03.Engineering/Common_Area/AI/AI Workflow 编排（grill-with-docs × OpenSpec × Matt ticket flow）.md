@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-09-03
+updated: 2026-09-06
+status: done
+source:
+---
 # AI 工作流编排（grill-with-docs × OpenSpec × Matt ticket flow）
 
 > 主题：把 Matt Pocock 的 grill-with-docs / to-spec / to-tickets / implement / code-review 技能与 OpenSpec 规范驱动开发串联成一条完整交付管道。

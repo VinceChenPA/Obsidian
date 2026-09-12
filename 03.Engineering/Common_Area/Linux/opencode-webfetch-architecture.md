@@ -1,6 +1,9 @@
 ---
 created: 2026-05-16
-tags: [opencode, webfetch, playwright, defuddle, web-scraping]
+tags: [opencode, webfetch, playwright, defuddle, web-scraping, type/note]
+updated: 2026-09-03
+status: done
+source:
 ---
 
 # opencode 自定义 webfetch 工具架构

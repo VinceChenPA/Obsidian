@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-05-10
+updated: 2026-09-06
+status: done
+source:
+---
 # Matt Pocock Skills · AI 编码代理方法论
 
 **来源**: [mattpocock/skills](https://github.com/mattpocock/skills) （2026-09-06 核对至 **v1.2.3**）

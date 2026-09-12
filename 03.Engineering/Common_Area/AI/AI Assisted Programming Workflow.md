@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-06-20
+updated: 2026-09-06
+status: done
+source:
+---
 # Matt Pocock AI 辅助编程工作流
 
 **来源**：[B站视频 - AI工具实战 Matt Pocock 演示](https://www.bilibili.com/video/BV1us5r6MEg6)

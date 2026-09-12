@@ -3,6 +3,10 @@ created: 2023-09-06
 tags:
   - reading/books
   - engineering/python
+  - type/note
+updated: 2026-09-03
+status: done
+source:
 ---
 # C3. Type Annotations
 **typecheckers**

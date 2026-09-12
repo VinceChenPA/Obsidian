@@ -1,3 +1,11 @@
+---
+tags:
+  - type/note
+created: 2026-05-14
+updated: 2026-05-14
+status: done
+source:
+---
 # opencode web 部署记录
 
 ## 架构
