@@ -10,6 +10,7 @@
 - [[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排 — grill-with-docs × OpenSpec × Matt ticket flow]]
 - [[03.Engineering/Common_Area/AI/llm-wiki|LLM Wiki — 用 LLM 增量维护个人知识库]]
 - [[03.Engineering/Common_Area/AI/LLM-Wiki-中文实践指南|LLM Wiki 中文实践指南 — 工作流/最佳实践/技巧]]
+- [[03.Engineering/Common_Area/AI/AI-工作流触发指南|AI 工作流触发指南 — 触发方式/例子/技巧]]
 
 ## Spec 驱动与规则文件
 
