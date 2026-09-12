@@ -8,3 +8,4 @@
 ## [2026-09-13] lint | 批量规范：78 篇补齐 frontmatter（五键/type 标签，created/updated 取自 git 历史）、41 篇补 H1、清除最后 1 处死链
 ## [2026-09-13] ingest | LLM Wiki 中文实践指南（原文总结＋本库实践与真实例子），更新 AI/MOC
 ## [2026-09-13] setup | AGENTS.md 增加工作流触发短语约定
+## [2026-09-13] setup | 触发短语表补齐 Query 归档触发（三工作流全覆盖）
