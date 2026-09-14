@@ -11,6 +11,7 @@
 - [[03.Engineering/Common_Area/AI/llm-wiki|LLM Wiki — 用 LLM 增量维护个人知识库]]
 - [[03.Engineering/Common_Area/AI/LLM-Wiki-中文实践指南|LLM Wiki 中文实践指南 — 工作流/最佳实践/技巧]]
 - [[03.Engineering/Common_Area/AI/AI-工作流触发指南|AI 工作流触发指南 — 触发方式/例子/技巧]]
+- [[03.Engineering/Common_Area/AI/LLM-Wiki-取用知识前后对比|LLM Wiki 前后：取用知识的区别]]
 
 ## Spec 驱动与规则文件
 
