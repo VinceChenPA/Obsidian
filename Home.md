@@ -21,6 +21,7 @@
 - `06.Personal/行程归档/` — 过期行程版本存档
 
 ## 工具与模板
+- `quicknote.md` — 全库收件箱（快速捕获，待消化）
 - [[Templates/generic_template|通用模板]] / [[Templates/QuickNote_Template|QuickNote 模板]]
 - `99.Attachments/` — 附件统一存放
 

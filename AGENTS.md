@@ -13,6 +13,7 @@
 
 - `Home.md` — 全库导航入口（根级）
 - `log.md` — 追加式操作日志（根级，格式：`## [YYYY-MM-DD] <操作> | <说明>`）
+- `quicknote.md` — 全库收件箱（根级，`type/quicknote`、`status: unread` 待消化）
 - `00.DailyLogs/` — 日期命名的日志（`YYYY-MM-DD.md`）
 - `01.ReadingLogs/` — 读书/文章笔记，含 `MOC.md`
 - `02.Domain/` — 领域知识（金融 BASEL 3 等），含 `MOC.md`
@@ -32,7 +33,7 @@
 - **语言**：笔记以简体中文为主，技术名词可保留英文
 - **新建笔记**：`# 标题` 与文件名一致；主动链接相关已有笔记；健康类一律放 `05.Health/`
 - **frontmatter**：统一使用 `tags` / `created` / `updated` / `status` / `source` 五键；tags 至少含一个 `type/*` 类型标签
-- **tag 体系**：`type/note`（普通笔记）、`type/quicknote`（快速捕获，`status: unread` 待消化，统一暂存 `03.Engineering/Common_Area/quicknote.md`）、`type/log`（日期日志）；其余为主题词
+- **tag 体系**：`type/note`（普通笔记）、`type/quicknote`（快速捕获，`status: unread` 待消化，统一暂存根级 `quicknote.md`）、`type/log`（日期日志）；其余为主题词
 - **tag 命名规范**：只允许字母（含中文）/ 数字 / `_` / `-` / `/`，**禁止空格**；多词标签用连字符连接（如 `DeepSeek-Harness`、`Matt-Pocock`）——含空格的标签 Obsidian 会报"不被允许的标签名"且不登记（2026-09-06 全库审计修复）
 - **日志**：`00.DailyLogs/` 只放日期文件（`YYYY-MM-DD.md`），非日期内容请归入主题目录
 - 不确定放哪个目录时询问用户，不要自作主张
@@ -54,7 +55,7 @@
 
 ### Ingest（消化新内容）
 
-来源：`03.Engineering/Common_Area/quicknote.md` 及外部导入内容。消化步骤：
+来源：根级 `quicknote.md` 及外部导入内容。消化步骤：
 
 1. 读取来源，与用户确认要点和归属
 2. 在对应目录写主题笔记（读入类放 `01.ReadingLogs/`）
