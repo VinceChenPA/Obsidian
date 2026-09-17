@@ -4,6 +4,7 @@
 
 ## AI 编码方法论与 Skills
 
+- [[03.Engineering/Common_Area/AI/Frontier-Engineering|Frontier Engineering（前沿工程）— Kiro 的 10 条原则]]
 - [[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论（v1.2.3）]]
 - [[03.Engineering/Common_Area/AI/matt-pocock-skills-installation-notes|Matt Pocock Skills 安装记录]]
 - [[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解（7 阶段 + 命令顺序）]]

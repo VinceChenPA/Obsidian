@@ -13,3 +13,4 @@
 ## [2026-09-13] setup | quicknote.md 移至库根作为全库收件箱（更新 AGENTS/Home 引用）
 ## [2026-09-13] ingest | 清空收件箱：2 条旧条目（PR precheckers、pandas→polars）经确认后丢弃
 ## [2026-09-13] query | LLM Wiki 前后取用知识区别（对比表+本库实例），更新 AI/MOC
+## [2026-09-17] ingest | Frontier Engineering（Kiro 10 条原则全文 drilldown），更新 AI/MOC
