@@ -2,13 +2,15 @@
 tags:
   - type/note
 created: 2026-09-02
-updated: 2026-09-03
+updated: 2026-09-25
 status: done
 source:
 ---
 # AI Agent 规则文件体系（AGENTS.md / CONTEXT.md / CLAUDE.md …）
 
 > 记录于 2026-09-02，基于 opencode 1.18.9 源码（`session/instruction.ts`、`fs-util.ts`）逐行核对，v1.18.9 与 main 分支实现完全一致。
+
+> **2026-09-25 补充**：opencode 已升级到 V2（2.0.16），本文源码核对基于 V1 1.18.9。V2 官方说明规则文件的发现机制为：保留现有 `AGENTS.md`，发现全局 `~/.config/opencode/AGENTS.md` 以及从当前目录向上至 home 的 ambient `AGENTS.md`（home 之外的项目在项目根停止）；不再提供 `CLAUDE.md` 回退。详见 [[03.Engineering/Common_Area/Linux/opencode-v2-migration|opencode V1→V2 迁移记录]]。
 
 ## 一、各工具约定文件一览
 

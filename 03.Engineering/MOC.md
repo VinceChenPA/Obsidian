@@ -41,6 +41,7 @@
 - [[03.Engineering/Common_Area/Linux/sed|sed]]
 - [[03.Engineering/Common_Area/Linux/nohup|nohup]]
 - [[03.Engineering/Common_Area/Linux/nginx-reverse-proxy|Nginx 反向代理]]
+- [[03.Engineering/Common_Area/Linux/opencode-v2-migration|opencode V1→V2 迁移记录]]
 - [[03.Engineering/Common_Area/Linux/opencode-web-setup|opencode web 部署]]
 - [[03.Engineering/Common_Area/Linux/opencode-version-log|opencode 版本记录]]
 - [[03.Engineering/Common_Area/Linux/opencode-webfetch-architecture|opencode webfetch 架构]]

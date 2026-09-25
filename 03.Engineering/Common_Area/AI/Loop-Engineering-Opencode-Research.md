@@ -1,6 +1,6 @@
 ---
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-25
 tags:
   - type/note
   - engineering/ai
@@ -18,6 +18,7 @@ source: https://addyosmani.com/blog/loop-engineering/
 
 - **研究日期**：2026-09-07。所有网页均于当日抓取。
 - **opencode 版本基准**：文档源为 `anomalyco/opencode` 的 `dev` 分支（2026-09-07 当日状态）；当日最新正式 release 为 **v1.18.29**（2026-09-04 发布，[GitHub Releases API](https://api.github.com/repos/anomalyco/opencode/releases/latest)）。
+- **2026-09-25 版本提示**：本机 opencode 已从 v1.x 迁移到 **V2（2.0.16）**。文中 `opencode serve`、`OPENCODE_SERVER_USERNAME/PASSWORD`、CLI 配置 `tui.json` 等属 V1 形态；V2 分别对应 `opencode service`、用户名固定为 `opencode` + `opencode service set password`、全局 `cli.json`。变化清单见 [[03.Engineering/Common_Area/Linux/opencode-v2-migration|opencode V1→V2 迁移记录]]。
 - **来源类型**：全部为一手来源——作者原文（Addy Osmani）、opencode 官方文档源（mdx，与 opencode.ai/docs 同源）、官方 GitHub 仓库/issue/PR（经 GitHub API 实时确认状态）、官方 GitHub Actions workflow、开源框架仓库原始文件。
 - **访问限制说明（诚实声明）**：Anthropic 官方文档站 `code.claude.com` 在本机（境内网络）多次直连超时（≥3 次尝试均失败），故第 6 节中 Claude Code 侧功能描述**未能逐字核对** Anthropic 原文，采用两条**间接一手证据**：① Addy Osmani 原文中的对照表格；② opencode issue #18001 评论中对官方文档 URL（`code.claude.com/docs/en/scheduled-tasks#run-a-prompt-repeatedly-with-/loop`）及其功能要点的转述。凡来自转述处均明确标注。
 - 报告内每条主张后以括号标注来源 URL；分析性结论标注"（推断：…）"以区别于事实。

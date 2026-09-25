@@ -2,7 +2,7 @@
 tags:
   - type/note
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-25
 status: done
 source:
 ---
@@ -17,7 +17,7 @@ source:
 ```
 
 - Nginx 监听 `0.0.0.0:80`，反向代理到 `127.0.0.1:4096`
-- opencode web 内置 Basic Auth 认证（环境变量 `OPENCODE_SERVER_USERNAME` / `OPENCODE_SERVER_PASSWORD`）
+- opencode 服务内置 Basic Auth 认证（V2：用户名固定 `opencode`，密码由 `opencode service set password` 配置；V1 为环境变量 `OPENCODE_SERVER_USERNAME` / `OPENCODE_SERVER_PASSWORD`）
 - 支持 WebSocket 升级
 
 ### Nginx 配置
@@ -60,16 +60,16 @@ sudo nginx -t
 sudo systemctl reload nginx
 
 # 验证
-curl -s -o /dev/null -w "%{http_code}" http://localhost/           # 应返回 401
-curl -s -o /dev/null -w "%{http_code}" -u "user:pass" http://localhost/  # 应返回 200
+curl -s -o /dev/null -w "%{http_code}" http://localhost/                     # 应返回 401
+curl -s -o /dev/null -w "%{http_code}" -u "opencode:密码" http://localhost/  # 应返回 200
 ```
 
-### opencode web 启动
+### opencode 服务启动（V2）
 
-启动脚本 `~/.local/bin/oc-web`：
-- 默认监听 `127.0.0.1:4096`
-- 通过环境变量注入认证凭据
+启动脚本 `~/.local/bin/oc-web`（V2 版）：
+- `opencode service set port/hostname` 配置监听（默认 `127.0.0.1:4096`）
+- `opencode service start` 启动，最后 `opencode pair` 输出配对链接
+- 同步副本 `~/oc_ws/oc-web`；参数持久化在 `~/.config/opencode/service.json`
+- 详见 [[03.Engineering/Common_Area/Linux/opencode-web-setup|opencode web 部署记录]]
 
-管理脚本 `~/oc_ws/oc-web`：
-- 支持 `start|stop|status|restart|logs` 子命令
-- 也注入了认证凭据
+> V1 历史：以 `opencode web --port/--hostname` 启动独立进程，通过 `OPENCODE_SERVER_USERNAME/PASSWORD` 环境变量注入认证凭据。
