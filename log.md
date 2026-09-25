@@ -19,3 +19,4 @@
 ## [2026-09-25] query | opencode 服务器资源优化归档：MCP 启动精简（去 npm exec 包装层，省 ~280MB）+ 启用 2GB swap（含资源基线）
 ## [2026-09-25] setup | 配置知乎 MCP（Douyh123/zhihu-mcp）：无头扫码登录改造 + opencode remote 接入（oauth:false），首次抓取文章验证成功
 ## [2026-09-25] ingest | 知乎翻译版《Frontier Engineering 十大原则》（与既有笔记同源）：仅补充中文翻译来源链接，清理移动端速记 未命名.md
+## [2026-09-25] setup | dsh web profile 接入知乎 MCP（dsh-mcp-client + insert patch 语法），启动 dsh web 验证连接成功

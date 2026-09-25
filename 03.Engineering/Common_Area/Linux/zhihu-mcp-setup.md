@@ -80,6 +80,28 @@ PYTHONUNBUFFERED=1 .venv/bin/python login_headless.py --timeout 300
 - 注意 `oauth: false`：本地服务无需鉴权，避免 V2 走 OAuth 流程
 - 连接验证：`opencode mcp list`（显示 `zhihu connected`，11 个工具）
 
+## dsh（DeepSeek Harness）接入
+
+dsh 自带 `@deepseek-ai/dsh-mcp-client`，可把 zhihu-mcp 注册为原生工具（命名 `mcp__zhihu__<tool>`）。
+
+在 profile 的 patch 层添加——**必须用 `insert` 语法**；直接写 `- id: mcp-zhihu` 会被当作"覆盖已有条目"的 patch，报 `entry "mcp-zhihu" not found` 并跳过：
+
+```yaml
+# ~/dsh_ws/dsh-home/profiles/web/cordis.patch.yml
+- insert:
+    - id: mcp-zhihu
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: zhihu
+        transport: streamable-http
+        url: http://127.0.0.1:18060/mcp
+```
+
+- 验证（不启动服务）：`DSH_HOME=~/dsh_ws/dsh-home dsh --profile web --dump-config | grep -A5 mcp-zhihu`
+- `toolCallTimeoutMs` 默认 60s；断线自动重连（500ms 起指数退避，上限 30s）
+- 目前仅配置 **web profile**（`headless` 未配；两个 profile 的 patch 层独立）
+- 实测（2026-09-25）：启动 dsh web 后，zhihu-mcp 日志出现来自 dsh 的连接（`POST /mcp` 200）✓
+
 ## 工具（11 个）
 
 `check_login_status`、`get_login_qrcode`、`delete_cookies`、`publish_article`、`publish_video`、`search_content`、`get_recommend_list`、`get_feed_detail`（含正文+评论，自动存 md）、`post_comment`、`get_user_profile`、`reply_comment`
