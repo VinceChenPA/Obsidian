@@ -16,3 +16,4 @@
 ## [2026-09-17] ingest | Frontier Engineering（Kiro 10 条原则全文 drilldown），更新 AI/MOC
 ## [2026-09-25] lint | opencode webfetch 两篇笔记标注 V2 迁移现状（插件路径、注册方式、配置字段 providers、历史内容保留）
 ## [2026-09-25] lint | opencode V2 迁移同步：更新 version-log/web-setup/nginx-reverse-proxy 三篇至 V2 现状，新增 V2 迁移总纲笔记（含清理清单），AI 目录两篇研究补 V2 版本提示
+## [2026-09-25] query | opencode 服务器资源优化归档：MCP 启动精简（去 npm exec 包装层，省 ~280MB）+ 启用 2GB swap（含资源基线）
