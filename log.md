@@ -14,3 +14,4 @@
 ## [2026-09-13] ingest | 清空收件箱：2 条旧条目（PR precheckers、pandas→polars）经确认后丢弃
 ## [2026-09-13] query | LLM Wiki 前后取用知识区别（对比表+本库实例），更新 AI/MOC
 ## [2026-09-17] ingest | Frontier Engineering（Kiro 10 条原则全文 drilldown），更新 AI/MOC
+## [2026-09-25] lint | opencode webfetch 两篇笔记标注 V2 迁移现状（插件路径、注册方式、配置字段 providers、历史内容保留）

@@ -6,19 +6,21 @@ tags:
   - config
   - type/note
 created: 2026-05-22
-updated: 2026-05-22
+updated: 2026-09-25
 status: done
 source:
 ---
 
 # opencode 配置与 webfetch 修复 2026-05-22
 
+> **2026-09-25 更新（V2 迁移）**：本文是 V1 时期（1.x）的修复记录，问题描述与修复内容作为历史保留。OpenCode 现已升级到 V2：配置字段 `provider` 在 V2 中为 `providers`；webfetch 已迁移为 V2 插件（现状见 [[03.Engineering/Common_Area/Linux/opencode-webfetch-architecture|opencode webfetch 架构]]）。
+
 ## DeepSeek V4 context/output limit 配置
 
 opencode 的配置文件 `~/.config/opencode/opencode.json` 中：
 
 - `model` 字段**必须是字符串**（如 `"deepseek/deepseek-v4-flash"`），不支持对象格式
-- context/output limit 配置在 `provider.deepseek.models.<model-id>.limit` 下
+- context/output limit 配置在 `provider.deepseek.models.<model-id>.limit` 下（V2 中为 `providers.deepseek`）
 - 字段名：`context`（context limit）、`output`（output limit）
 
 当前配置的两个模型：
@@ -30,7 +32,7 @@ opencode 的配置文件 `~/.config/opencode/opencode.json` 中：
 
 Schema 定义：https://opencode.ai/config.json
 
-验证命令：`opencode debug config`
+验证命令：`opencode debug config`（V2 中仍可用，输出配置源列表）
 
 ## webfetch 工具修复
 
@@ -55,8 +57,9 @@ Schema 定义：https://opencode.ai/config.json
 5. **Accept 头**：添加 `text/html,...` 请求头
 6. **package.json**：添加 `"type": "module"` 消除加载警告
 
-### 文件位置
+### 文件位置（V1 历史；2026-09-25 已迁移到 V2 插件）
 
-- 全局：`~/.config/opencode/tools/webfetch.ts`
-- 项目：`.opencode/tools/webfetch.ts`
+- 全局：`~/.config/opencode/tools/webfetch.ts`（已删除）
+- 项目：`.opencode/tools/webfetch.ts`（已删除）
 - 依赖：`~/.config/opencode/node_modules/`
+- 现址：`~/.config/opencode/plugins/webfetch.ts`（V2 插件）

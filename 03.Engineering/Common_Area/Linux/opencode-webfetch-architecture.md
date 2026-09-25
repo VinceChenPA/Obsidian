@@ -1,12 +1,14 @@
 ---
 created: 2026-05-16
 tags: [opencode, webfetch, playwright, defuddle, web-scraping, type/note]
-updated: 2026-09-03
+updated: 2026-09-25
 status: done
 source:
 ---
 
 # opencode 自定义 webfetch 工具架构
+
+> **2026-09-25 更新（V2 迁移）**：OpenCode 已升级到 V2，实现从 V1 自定义工具（`.opencode/tools/*.ts`）迁移为 V2 插件（`~/.config/opencode/plugins/webfetch.ts`）。两级降级策略、效率实测与系统依赖均不变；工具注册方式的现状见下文「工具文件」节。
 
 ## 架构: 两级降级策略
 
@@ -68,13 +70,23 @@ export LD_LIBRARY_PATH="$HOME/.local/lib/playwright-deps${LD_LIBRARY_PATH:+:$LD_
 
 ## 工具文件
 
-- 项目级: `.opencode/tools/webfetch.ts`
-- 全局: `~/.config/opencode/tools/webfetch.ts`
-- 依赖: `@opencode-ai/plugin`, `defuddle`, `playwright`
-- 参数: `url` (必填), `format` (markdown/text/html), `extract` (boolean, 默认 true)
+现状（V2 插件，2026-09-25 迁移）：
+
+- 插件：`~/.config/opencode/plugins/webfetch.ts`（V2 服务端自动发现并热加载）
+- 注册方式：`export default { id, setup }` + `ctx.tool.transform()` 注册工具（与内置 webfetch 同名，覆盖内置版）
+- 依赖：`defuddle`, `playwright`（安装在 `~/.config/opencode/node_modules/`）
+- 参数：`url` (必填), `format` (markdown/text/html), `extract` (boolean, 默认 true), `timeout` (ms, 默认 30000)
+- 插件重载/卸载时自动关闭 Chromium（cleanup），避免孤儿进程
+- 调试日志：`/tmp/opencode/webfetch-plugin.log`（setup/cleanup/每次调用）
+
+V1 历史形态（已废弃，2026-09-25 删除）：
+
+- 项目级 `.opencode/tools/webfetch.ts`、全局 `~/.config/opencode/tools/webfetch.ts`
+- 依赖 `@opencode-ai/plugin`（V1 API）；V1 的 tools 目录机制在 V2 不再被加载
 
 ## 参考资料
 
-- [opencode Custom Tools](https://opencode.ai/docs/custom-tools/)
+- [opencode V2 插件文档](https://opencode.ai/v2/docs/build/plugins) — V2 自定义工具注册方式
+- [opencode Custom Tools (V1)](https://opencode.ai/docs/custom-tools/) — 历史参考
 - [Defuddle](https://github.com/kepano/defuddle) — HTML 提纯为 markdown
 - [Playwright](https://playwright.dev/) — 浏览器自动化
