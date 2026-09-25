@@ -21,3 +21,4 @@
 ## [2026-09-25] ingest | 知乎翻译版《Frontier Engineering 十大原则》（与既有笔记同源）：仅补充中文翻译来源链接，清理移动端速记 未命名.md
 ## [2026-09-25] setup | dsh web profile 接入知乎 MCP（dsh-mcp-client + insert patch 语法），启动 dsh web 验证连接成功
 ## [2026-09-25] ingest | OpenCode 深读《把编码 agent 当数据库来设计》（知乎）：事件溯源四层架构/压缩交接协议/Effect/对照 Claude Code，含本机实践对照表，更新 AI 两级 MOC
+## [2026-09-25] lint | 将 V2 架构视角回填：《AI Agent 规则文件体系》补 SystemContext 运行时机制（类型化源/快照/纪元/对账/拒绝静默降级），《V1→V2 迁移记录》补「现象-原因」对照表

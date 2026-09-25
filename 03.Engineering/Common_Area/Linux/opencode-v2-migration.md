@@ -22,6 +22,19 @@ source:
 2. **Server API 与客户端契约变更**
 3. **CLI 配置**：分层 `tui.json(c)` → 单一全局 `~/.config/opencode/cli.json`
 
+## 架构视角：为什么 V2 长这样
+
+V2 的会话引擎是**事件溯源的持久系统**（详见 [[03.Engineering/Common_Area/AI/OpenCode-v2-架构深读|OpenCode v2 架构深读]]）。理解它，迁移中遇到的「怪现象」都会变得合理：
+
+| V2 现象 | 架构原因 |
+|---|---|
+| 必须有后台服务（`opencode service`） | 循环本身是持久化工作队列；TUI/web 只是「订阅事件 + 发指令」的客户端（client/server 是架构推论） |
+| DB 结构变化（`session_v2`、事件相关表） | 会话是追加日志，SQLite 是事件流的**投影**；撤销 = 补偿，fork = 重放到平行分支 |
+| `~/.local/share/opencode/tool-output/` 目录 | 工具输出**外存**（保留 7 天），进上下文的是有界头尾采样预览——不是缓存垃圾，勿删 |
+| compaction 配置变更（移除 `tail_turns`/`prune`） | 压缩改为**交接协议**（固定 schema + 明确丢失语义），按 token 预算保留近段而非按轮数 |
+| 同一 MCP 在多个 location 各拉起一份 | V2 按 location 加载配置与资源（本机 getnote ×2 的成因） |
+| 规则文件改动以「增量」告知模型 | SystemContext 源 + 基线对账机制（见 [[03.Engineering/Common_Area/AI/AI Agent 规则文件体系\|规则文件体系]]） |
+
 ## 配置形态变化
 
 | V1 | V2 |

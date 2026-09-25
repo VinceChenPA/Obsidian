@@ -12,6 +12,18 @@ source:
 
 > **2026-09-25 补充**：opencode 已升级到 V2（2.0.16），本文源码核对基于 V1 1.18.9。V2 官方说明规则文件的发现机制为：保留现有 `AGENTS.md`，发现全局 `~/.config/opencode/AGENTS.md` 以及从当前目录向上至 home 的 ambient `AGENTS.md`（home 之外的项目在项目根停止）；不再提供 `CLAUDE.md` 回退。详见 [[03.Engineering/Common_Area/Linux/opencode-v2-migration|opencode V1→V2 迁移记录]]。
 
+## V2 规则文件的运行时机制（SystemContext）
+
+V2 把系统上下文（AGENTS.md、全局规则、`instructions`）建模为**可独立刷新的类型化源**（源码 `system-context/index.ts`）：
+
+- 每个源有 `key` / `load` / `baseline`（首次渲染进模型的内容）/ `update`（变更时告知模型的增量文本）；
+- 每个源的最新值持久化为结构化 **Snapshot**，并绑定 `baseline_seq` 序号——即 `context-epoch.ts` 所称的「**纪元**」；
+- 会话重启时执行 **reconcile（对账）**：磁盘当前值与快照一致 → Unchanged（不浪费上下文）；不一致 → 生成 `ContextUpdated` 事件并**原子地推进基线**；
+- **拒绝静默降级**：规则源暂时读不到 ≠ 移除——刷新保留已确认快照，替换宁可等待（`InitializationBlocked`），也不静默构造残缺基线。
+
+> 含义：规则文件在 V2 中不是「每次会话顺手读一下」，而是**有版本、可对账、缺失即报错的系统输入**。这也解释了为什么 AGENTS.md 的改动会以「增量」形式告知模型，而不是重灌全文。
+> 架构细节见 [[03.Engineering/Common_Area/AI/OpenCode-v2-架构深读|OpenCode v2 架构深读]]。
+
 ## 一、各工具约定文件一览
 
 **规则/指令类（自动注入上下文）**
