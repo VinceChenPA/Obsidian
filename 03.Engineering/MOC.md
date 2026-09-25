@@ -29,6 +29,7 @@
 - [[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排 — grill-with-docs × OpenSpec × Matt ticket flow]]
 - [[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系（AGENTS/CONTEXT/CLAUDE）]]
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
+- [[03.Engineering/Common_Area/AI/OpenCode-v2-架构深读|OpenCode v2 架构深读 — 把编码 agent 当数据库来设计]]
 
 ## 通用工具
 ### Git

@@ -27,6 +27,7 @@
 ## 工具与 Harness 实践
 
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
+- [[03.Engineering/Common_Area/AI/OpenCode-v2-架构深读|OpenCode v2 架构深读 — 把编码 agent 当数据库来设计（事件溯源/持久队列/压缩交接）]]
 - [[03.Engineering/Common_Area/AI/copilot vs opencode|copilot vs opencode]]
 - [[03.Engineering/Common_Area/AI/MCP|MCP 协议]]
 - [[03.Engineering/Common_Area/AI/Snippets|AI 编程环境五层概念（Rules/Memories/MCP/Skill/Workflow）]]
