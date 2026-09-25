@@ -6,13 +6,14 @@ tags:
   - Kiro
   - AI-Agent
 created: 2026-09-17
-updated: 2026-09-17
+updated: 2026-09-25
 status: done
 source: https://kiro.dev/topics/frontier-engineering/
 ---
 # Frontier Engineering（前沿工程）
 
 > Kiro 官方发布的 AI 时代工程师实践指南。原文：<https://kiro.dev/topics/frontier-engineering/>（另有管理者版 <https://kiro.dev/topics/frontier-teams/>）
+> 中文翻译版（知乎专栏）：<https://zhuanlan.zhihu.com/p/2081824400647647681>
 > 相关笔记：[[03.Engineering/Common_Area/AI/Loop-Engineering|Loop Engineering]]、[[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development]]、[[03.Engineering/Common_Area/AI/AI Agent 规则文件体系|AI Agent 规则文件体系]]、[[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践]]
 
 ## 核心命题

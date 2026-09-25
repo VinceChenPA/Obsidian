@@ -18,3 +18,4 @@
 ## [2026-09-25] lint | opencode V2 迁移同步：更新 version-log/web-setup/nginx-reverse-proxy 三篇至 V2 现状，新增 V2 迁移总纲笔记（含清理清单），AI 目录两篇研究补 V2 版本提示
 ## [2026-09-25] query | opencode 服务器资源优化归档：MCP 启动精简（去 npm exec 包装层，省 ~280MB）+ 启用 2GB swap（含资源基线）
 ## [2026-09-25] setup | 配置知乎 MCP（Douyh123/zhihu-mcp）：无头扫码登录改造 + opencode remote 接入（oauth:false），首次抓取文章验证成功
+## [2026-09-25] ingest | 知乎翻译版《Frontier Engineering 十大原则》（与既有笔记同源）：仅补充中文翻译来源链接，清理移动端速记 未命名.md
