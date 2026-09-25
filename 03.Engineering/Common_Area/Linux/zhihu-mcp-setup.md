@@ -106,6 +106,28 @@ dsh 自带 `@deepseek-ai/dsh-mcp-client`，可把 zhihu-mcp 注册为原生工�
 
 `check_login_status`、`get_login_qrcode`、`delete_cookies`、`publish_article`、`publish_video`、`search_content`、`get_recommend_list`、`get_feed_detail`（含正文+评论，自动存 md）、`post_comment`、`get_user_profile`、`reply_comment`
 
+## 解析器改进（2026-09-25，与 dsh session 协作）
+
+首版基于固定选择器，实测三类问题；已在 `zhihu/actions.py`（+432 行）修复并验证：
+
+| 问题 | 修复 |
+|---|---|
+| 搜索结果常只出 1 条（日志频繁 `Selector-based parsing returned nothing` 走 fallback） | 扩展候选选择器 + fallback 解析 |
+| `author` 全为空、`votes` 全为 `"0"` | `extract_author` 改为**按优先级遍历 `query_selector_all`**——单个逗号分隔的 `query_selector` 会命中文档序中首个（通常是空的）`.UserLink-link` |
+| 同一答案以 `/answer/<id>` 与 `/question/<qid>/answer/<id>` 两种 URL 重复出现 | 新增 `content_key()` 按内容 id 去重（搜索与推荐列表均应用） |
+| 文章抓取缺 `author` 等字段 | 修复后 `get_feed_detail` 返回 author + votes + comment_count + url |
+
+**效果对比**（关键词 `opencode` 搜索）：
+
+| 指标 | 改进前 | 改进后 |
+|---|---|---|
+| 结果数 | limit=3 → **1 条** | limit=8 → **6 条** |
+| `author` | 全部空 | **全部填充**（lakeview/黑虾/柯阳WELT…） |
+| `votes` | 全部 `"0"` | **真实值**（116/179/105/21/3/5） |
+
+- 本地已 commit（`2e3e4eb`，**未推送**——第三方仓库无权限）
+- `.gitignore` 已补 `cookies/`、`search_results/`（凭据与抓取产物不入库）
+
 ## 注意事项与踩坑
 
 - **每次工具调用都会启动/关闭一个 Chromium**（不常驻）：单次约 3-5s、峰值 +300MB 内存；内存紧张的机器需注意

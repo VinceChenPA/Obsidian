@@ -22,3 +22,4 @@
 ## [2026-09-25] setup | dsh web profile 接入知乎 MCP（dsh-mcp-client + insert patch 语法），启动 dsh web 验证连接成功
 ## [2026-09-25] ingest | OpenCode 深读《把编码 agent 当数据库来设计》（知乎）：事件溯源四层架构/压缩交接协议/Effect/对照 Claude Code，含本机实践对照表，更新 AI 两级 MOC
 ## [2026-09-25] lint | 将 V2 架构视角回填：《AI Agent 规则文件体系》补 SystemContext 运行时机制（类型化源/快照/纪元/对账/拒绝静默降级），《V1→V2 迁移记录》补「现象-原因」对照表
+## [2026-09-25] lint | zhihu-mcp 解析器改进回归验证（搜索 1→6 条、author/votes 填充、去重生效）：笔记补改进记录，本地 commit 2e3e4eb
