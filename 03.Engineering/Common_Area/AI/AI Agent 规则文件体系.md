@@ -2,7 +2,7 @@
 tags:
   - type/note
 created: 2026-09-02
-updated: 2026-09-25
+updated: 2026-10-09
 status: done
 source:
 ---
@@ -52,6 +52,8 @@ V2 把系统上下文（AGENTS.md、全局规则、`instructions`）建模为**�
 - 一句话：**AGENTS.md 告诉 AI 怎么干活，CONTEXT.md 告诉所有人话该怎么说**。
 
 ## 三、opencode 加载顺序机制（多 repo / 嵌套工作区）
+
+> **适用范围**：以下 §3 全部来自 **V1（1.18.9）源码实测**。V2 已改变的行为见文首提示与 [[03.Engineering/Common_Area/Linux/opencode-v2-migration|opencode V1→V2 迁移记录]]；§3.2 的 `CLAUDE.md` 回退链属 V1 结论。
 
 ### 3.1 判定基准（InstanceState.context）
 - `ctx.directory`：会话工作目录（cwd，最深）

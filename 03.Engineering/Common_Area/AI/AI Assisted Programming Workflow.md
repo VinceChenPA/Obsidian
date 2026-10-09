@@ -2,11 +2,13 @@
 tags:
   - type/note
 created: 2026-06-20
-updated: 2026-09-06
+updated: 2026-10-09
 status: done
 source:
 ---
 # Matt Pocock AI 辅助编程工作流
+
+> **范围**：本页只作 B 站视频（Gelai_AI）的要点清单与工程基本功判断，**不重复** 7 阶段框架、pipeline 命令顺序（grill-with-docs → to-spec → to-tickets → implement → code-review）与 v1.0→v1.2.3 版本变更——那些以 [[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解]] 为准。两者的配对编排见 [[03.Engineering/Common_Area/AI/AI Workflow 编排（grill-with-docs × OpenSpec × Matt ticket flow）|AI 工作流编排]]。
 
 **来源**：[B站视频 - AI工具实战 Matt Pocock 演示](https://www.bilibili.com/video/BV1us5r6MEg6)
 **UP 主**：Gelai_AI

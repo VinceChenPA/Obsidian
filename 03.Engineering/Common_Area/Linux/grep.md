@@ -3,11 +3,11 @@ created: 2024-03-09
 tags:
   - engineering/linux
   - type/note
-updated: 2026-09-03
+updated: 2026-10-09
 status: done
 source:
 ---
-`grep`是一个在Unix和类Unix系统中用于搜索文本的强大工具。它的名称来源于正则表达式中的**Globally Regular Expression Print**。`grep`允许用户在文件或标准输入中搜索文本模式，并输出匹配的行。
+`grep`是一个在Unix和类Unix系统中用于搜索文本的强大工具。它的名称来源于 ed 编辑器中的命令 `g/re/p`（**global regular expression print**，全局正则表达式打印）。`grep`允许用户在文件或标准输入中搜索文本模式，并输出匹配的行。
 
 ## 基本语法
 

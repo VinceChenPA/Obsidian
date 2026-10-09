@@ -1,7 +1,7 @@
 ---
 created: 2026-05-16
 tags: [opencode, webfetch, playwright, defuddle, web-scraping, type/note]
-updated: 2026-09-25
+updated: 2026-10-09
 status: done
 source:
 ---
@@ -75,7 +75,7 @@ export LD_LIBRARY_PATH="$HOME/.local/lib/playwright-deps${LD_LIBRARY_PATH:+:$LD_
 - 插件：`~/.config/opencode/plugins/webfetch.ts`（V2 服务端自动发现并热加载）
 - 注册方式：`export default { id, setup }` + `ctx.tool.transform()` 注册工具（与内置 webfetch 同名，覆盖内置版）
 - 依赖：`defuddle`, `playwright`（安装在 `~/.config/opencode/node_modules/`）
-- 参数：`url` (必填), `format` (markdown/text/html), `extract` (boolean, 默认 true), `timeout` (ms, 默认 30000)
+- 参数：`url` (必填), `format` (markdown/text/html), `extract` (boolean, 默认 true), `timeout` (ms, 默认 30000)；插件版历史取值与重试策略见 [[03.Engineering/Common_Area/Linux/opencode-webfetch-v4-repair|webfetch 修复记录]]
 - 插件重载/卸载时自动关闭 Chromium（cleanup），避免孤儿进程
 - 调试日志：`/tmp/opencode/webfetch-plugin.log`（setup/cleanup/每次调用）
 

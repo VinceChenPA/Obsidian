@@ -4,7 +4,7 @@ tags:
   - personal/investment
   - finance/trading
   - type/note
-updated: 2026-09-03
+updated: 2026-10-09
 status: done
 source:
 ---
@@ -19,4 +19,4 @@ source:
 **QMT 模拟账户**
 Stock: 2036424
 Futures: 1035593
-PWD: 123456
+PWD: 见密码管理器（原文写了明文口令，已于 2026-10-09 lint 移除；确需找回可从 git 历史取）

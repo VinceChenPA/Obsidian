@@ -2,11 +2,13 @@
 tags:
   - type/note
 created: 2026-09-03
-updated: 2026-09-06
+updated: 2026-10-09
 status: done
 source:
 ---
 # AI 工作流编排（grill-with-docs × OpenSpec × Matt ticket flow）
+
+> **范围**：本页只讲「怎么把 Matt 流与 OpenSpec 串起来」——分工表、避免双写的编排规则、坑与 SOP 模板；Matt 技能自身的命令语义（grill-with-docs / to-spec / to-tickets / implement / code-review 各步做什么）以 [[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解]] 为准，此处不重复；OpenSpec 机制（`/opsx:*`、delta spec、目录结构、工具对比）以 [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD)]] 为准。
 
 > 主题：把 Matt Pocock 的 grill-with-docs / to-spec / to-tickets / implement / code-review 技能与 OpenSpec 规范驱动开发串联成一条完整交付管道。
 > 一句话：**grill 负责想、OpenSpec 负责存、to-tickets 负责拆、implement 负责做、code-review 负责查**——按顺序串联，谁强谁上，内容不重复。

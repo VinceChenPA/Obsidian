@@ -1,6 +1,6 @@
 ---
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-10-09
 tags:
   - type/note
   - engineering/ai
@@ -11,6 +11,8 @@ source: https://www.runoob.com/ai-agent/loop-engineering.html
 ---
 
 # Loop Engineering（循环工程）
+
+> **范围**：本页是概念速览＋本机 opencode 支持映射；一手来源的逐条引语与 URL、opencode 官方能力/缺口盘点、社区框架与实操配方以 [[03.Engineering/Common_Area/AI/Loop-Engineering-Opencode-Research|Loop Engineering with opencode — 一手来源研究报告]] 为准，此处不重复。本页另有该报告未覆盖的内容：五种常见 Loop 模式、四类故障模式、渐进四阶段，以及**本机 V1 1.18.9 实测**的 opencode 映射表。
 
 ## 概述
 
@@ -46,12 +48,14 @@ Loop 的力量不在任何单独步骤，而在于**闭环**：测试失败不�
 
 ## 六大构成要素
 
-1. **自动触发器（Automations）**：定义"什么时候、做什么"。定时调度（如 `/loop --schedule`、cron）。⚠️ 定时 Loop 每次触发消耗 Token，建议先慢节奏（每天一次）观察成本。
+1. **自动触发器（Automations）**：定义"什么时候、做什么"。定时调度（如 cron；Claude Code 侧为 `/loop [interval] [prompt]`——本页原写的 `/loop --schedule` 与官方语法不符，2026-10-09 更正，见 [[03.Engineering/Common_Area/AI/Claude Code|Claude Code]]）。⚠️ 定时 Loop 每次触发消耗 Token，建议先慢节奏（每天一次）观察成本。
 2. **并行隔离（Git Worktrees）**：多 Agent 各自独立工作目录/分支，共享 Git 历史但文件改动隔离。审查瓶颈（而非工具限制）决定可并行 Agent 数量上限。
 3. **技能文件（Skills）**：SKILL.md 沉淀项目约定、构建步骤、"我们不这样做是因为那次事故"。避免每次新对话从零推断规范。
 4. **连接器（Connectors/MCP）**：打通 Issue 追踪、数据库、Slack 等外部系统。必须最小权限；高风险操作（推送/合并/外部通知）要求人工审批。
 5. **子 Agent（Maker-Checker）**：写代码的 Agent 与检查代码的 Agent 分离——写代码的模型评分自己作业会过于宽容。检查者用独立（更强）模型对抗性审查。Claude Code 的 `/goal` 也由单独模型判断"是否完成"。
 6. **持久记忆（Memory）**：状态写在文件里、文件放在仓库里——"仓库记得，即使模型不记得"（TODO.md 状态文件惯例）。
+
+> **更正（2026-10-09）：本页"六大构成要素"这一计数口径已被 [[03.Engineering/Common_Area/AI/Loop-Engineering-Opencode-Research|Loop Engineering with opencode — 一手来源研究报告]] §1.2 取代**——Addy Osmani 原文写作 "A loop needs **five things** and then one place to remember stuff"，即 **五件套（Automations / Worktrees / Skills / Plugins and connectors / Sub-agents）+ 第 6 件事：落在磁盘上的状态记忆**；第 6 项前半句为整理者表述，原文对应句为 "The agent forgets, the repo doesn't."。
 
 ## 五种常见 Loop 模式
 
@@ -97,7 +101,9 @@ Loop 的力量不在任何单独步骤，而在于**闭环**：测试失败不�
 2. **理解债（Comprehension Debt）**：Loop 越快，你真正理解的代码比例越低——解药是读 Loop 产出的代码。
 3. **认知投降（Cognitive Surrender）**：Loop 运转时接受任何返回最舒适，是最隐性危险。同一 Loop 两人用可得出相反结果：一个深化理解，一个回避理解。
 
-## opencode 支持映射（本机 1.18.9 实测）
+> 三条风险均直接出自 Addy Osmani 原文，逐字英文引语、逐条来源 URL 与第 4 条"Token 成本"警告、原文结尾立场（"build it like someone who intends to stay the engineer"）见 [[03.Engineering/Common_Area/AI/Loop-Engineering-Opencode-Research|一手来源研究报告]] §1.5。
+
+## opencode 支持映射（本机 V1 1.18.9 实测；V2 变化见迁移记录）
 
 | Loop 要素 | opencode 机制 | 命令/配置 |
 |---|---|---|
@@ -105,7 +111,7 @@ Loop 的力量不在任何单独步骤，而在于**闭环**：测试失败不�
 | 常驻/服务化 | `opencode serve` + `run --attach`；web 模式已有 | `opencode run --attach http://localhost:4096 --dir <path>` |
 | 并行隔离 | git worktree + `--dir`；`opencode pr <n>` 检出 PR 分支跑 agent | `git worktree add ... && opencode run --dir <wt>` |
 | 技能文件 | 原生一等公民：`.opencode/skills/` + 全局 `~/.config/opencode/skills/` 自动发现 SKILL.md | skill 工具按需注入 |
-| 连接器 | `opencode mcp` 命令 + opencode.json `mcp` 段 | GitHub/Slack/DB 等 server |
+| 连接器 | `opencode mcp` 命令 + opencode.json `mcp` 段（V2 已改为 `mcp.servers`） | GitHub/Slack/DB 等 server |
 | 子 Agent | `opencode agent create`（`.opencode/agent/*.md`，可指定 model/tools）；task 工具派发 | reviewer agent 配更强模型 = Maker-Checker |
 | 持久记忆 | 三机制：AGENTS.md 自动加载 / session_memory 表（`opencode db`）/ 仓库内状态文件 | `opencode session list`、`--continue` |
 | 会话延续 | `--continue` / `-s <session_id>` / `--fork` 跨触发延续上下文 | 配合 cron 形成跨会话 Loop |

@@ -3,7 +3,7 @@ tags:
   - type/note
   - opencode
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-10-09
 status: done
 source:
 ---
@@ -62,7 +62,7 @@ V2 的会话引擎是**事件溯源的持久系统**（详见 [[03.Engineering/C
 
 ## web 服务
 
-- `opencode web` → `opencode service set/start` + `opencode pair`；认证用户名固定为 `opencode`
+- `opencode web` → `opencode service set/start` + `opencode pair`；认证用户名固定为 `opencode`，密码用 `opencode service set password` 配置（V1 为 `OPENCODE_SERVER_USERNAME` / `OPENCODE_SERVER_PASSWORD` 环境变量）
 - 见 [[03.Engineering/Common_Area/Linux/opencode-web-setup|opencode web 部署记录]]
 
 ## 记忆机制

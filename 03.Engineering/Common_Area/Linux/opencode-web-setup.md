@@ -2,7 +2,7 @@
 tags:
   - type/note
 created: 2026-05-14
-updated: 2026-09-25
+updated: 2026-10-09
 status: done
 source:
 ---
@@ -32,7 +32,7 @@ source:
 - 启动脚本: `~/.local/bin/oc-web`（V2 版）
   - `opencode service set port/hostname` 配置监听（默认 `127.0.0.1:4096`）
   - `opencode service start` 启动服务，最后 `opencode pair` 输出配对链接
-  - 可用 `OC_WEB_PASSWORD` 环境变量固定密码（默认由 V2 生成强密码）
+  - 密码：V2 走 `opencode service set password`（用户名固定 `opencode`）；本机 `oc-web` 脚本另用 `OC_WEB_PASSWORD` 环境变量。两种方式是否等价未实测（待核实），认证说明以 [[03.Engineering/Common_Area/Linux/nginx-reverse-proxy|Nginx 反向代理]] 与 [[03.Engineering/Common_Area/Linux/opencode-v2-migration|V2 迁移记录]] 为准
 - 同步副本: `~/oc_ws/oc-web`（内容与上者一致，2026-09-25 替换）
 - 服务参数持久化在 `~/.config/opencode/service.json`
 

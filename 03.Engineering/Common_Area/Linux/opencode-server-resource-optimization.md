@@ -3,7 +3,7 @@ tags:
   - type/note
   - opencode
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-10-09
 status: done
 source:
 ---
@@ -93,7 +93,7 @@ sudo bash ~/oc_ws/add-swap.sh
 
 | 进程 | RSS | 说明 |
 |------|-----|------|
-| `opencode serve --service` | ~387MB | V2 主服务 |
+| `opencode serve --service` | ~387MB | 进程名；V2 的启动入口为 `opencode service start`（见 [[03.Engineering/Common_Area/Linux/opencode-v2-migration|V2 迁移记录]]） |
 | `node bing-cn-mcp` | ~100MB | 项目级 MCP |
 | `node @getnote/mcp` ×2 | ~153MB | 全局 MCP，两个 location 各一份（V2 正常行为） |
 | **合计** | **~625MB / 4 进程** | |

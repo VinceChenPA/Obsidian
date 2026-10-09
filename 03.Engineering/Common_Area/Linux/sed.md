@@ -3,7 +3,7 @@ created: 2023-10-26
 tags:
   - engineering/linux
   - type/note
-updated: 2026-09-03
+updated: 2026-10-09
 status: done
 source:
 ---
@@ -102,7 +102,7 @@ sed '1,3d' test.fasta
 
 ```
 # 删除空白行
-sed 's/^$//g' test.fasta
+sed '/^$/d' test.fasta
 ```
 
 - 在特定行插入内容

@@ -13,6 +13,7 @@
 - [[03.Engineering/Common_Area/AI/LLM-Wiki-中文实践指南|LLM Wiki 中文实践指南 — 工作流/最佳实践/技巧]]
 - [[03.Engineering/Common_Area/AI/AI-工作流触发指南|AI 工作流触发指南 — 触发方式/例子/技巧]]
 - [[03.Engineering/Common_Area/AI/LLM-Wiki-取用知识前后对比|LLM Wiki 前后：取用知识的区别]]
+- [[03.Engineering/Common_Area/AI/LLM-Wiki-实现现状|LLM Wiki 实现现状（组件核对 + 首轮全库 lint 基线）]]
 
 ## Spec 驱动与规则文件
 
@@ -28,6 +29,7 @@
 
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
 - [[03.Engineering/Common_Area/AI/OpenCode-v2-架构深读|OpenCode v2 架构深读 — 把编码 agent 当数据库来设计（事件溯源/持久队列/压缩交接）]]
+- [[03.Engineering/Common_Area/AI/Claude Code|Claude Code — 规则文件/skill 布局/命令清单与 opencode·DSH 对照]]
 - [[03.Engineering/Common_Area/AI/copilot vs opencode|copilot vs opencode]]
 - [[03.Engineering/Common_Area/AI/MCP|MCP 协议]]
 - [[03.Engineering/Common_Area/AI/Snippets|AI 编程环境五层概念（Rules/Memories/MCP/Skill/Workflow）]]

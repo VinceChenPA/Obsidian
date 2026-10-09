@@ -5,7 +5,7 @@ tags:
   - DeepSeek-Harness
   - Agent-编排
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-10-09
 status: done
 source: DeepSeek Harness 使用实践总结（会话经验）
 ---
@@ -69,4 +69,4 @@ DSH 的核心价值 = 上下文隔离（subagent）+ 并行 fan-out（workflow�
 
 ## 六、与既有方法论的关系
 
-与 Matt Pocock 流程同构：plan/spec ≈ 4. Spec 阶段，subagent 调研 ≈ 2. Research，垂直切片 + 逐 ticket 实现 ≈ 5-6 阶段；DSH 的 `goal`/`workflow` 提供了"ticket 的并行执行层"，`skill` 体系则是 repo 内 `.agents/skills/` 的会话内等价物。核心约束一致：**切小、可验证、文件即接口、频繁干净重置**。
+与 Matt Pocock 流程同构：plan/spec ≈ 4. Spec 阶段，subagent 调研 ≈ 2. Research，垂直切片 + 逐 ticket 实现 ≈ 5-6 阶段；DSH 的 `goal`/`workflow` 提供了"ticket 的并行执行层"，`skill` 体系则是**全局技能目录**（本机为 `~/.config/opencode/skills/` 与 `~/.claude/skills/`，非 repo 内路径）按需注入的会话内能力。核心约束一致：**切小、可验证、文件即接口、频繁干净重置**。
