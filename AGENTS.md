@@ -83,6 +83,8 @@
 
 ## 环境
 
-- 本库同时存在于 Windows（`D:\Vince_Chen\Obsidian`）与 Linux 主机上，**不要假定某一个平台**：Windows 用 PowerShell，Linux 用 bash，示例命令按当前主机改写
+- **本库在 Windows 与 Linux 上都会使用，规则与笔记必须跨平台**：不写死某个系统的绝对路径、命令或大小写/路径分隔符假设；引用文件一律用**相对仓库根的路径**
+- 库根目录 = 仓库根目录（`AGENTS.md`、`Home.md`、`log.md`、`quicknote.md` 均在此）
+- 需要 shell 命令时按当前主机的 shell 改写，或并列给出 POSIX 与 PowerShell 两种写法
 - Remote: `git@github.com:VinceChenPA/Obsidian.git`（SSH）
 - 无构建/测试/lint 命令
