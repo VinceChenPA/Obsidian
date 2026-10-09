@@ -20,14 +20,18 @@
 - [[06.Personal/MOC|个人 · 内容地图]] — 量化 / 亲子 / 行程 / 职业思考
 - `06.Personal/行程归档/` — 过期行程版本存档
 
+## 原始来源与附件
+- `98.Raw/` — 原始来源层：文章 / 报告 / 转录等**不可变原文**（LLM 只读，不改不删、不补 frontmatter）
+- `99.Attachments/` — 附件（图片等）统一存放
+
 ## 工具与模板
-- `quicknote.md` — 全库收件箱（快速捕获，待消化）
+- `quicknote.md` — 全库收件箱（快速捕获，待消化；耐久原文放 `98.Raw/`，临时速记放这里）
 - [[Templates/generic_template|通用模板]] / [[Templates/QuickNote_Template|QuickNote 模板]]
-- `99.Attachments/` — 附件统一存放
 
 ## 使用指引（AI 代理必读）
 - 操作前先 `git pull --ff-only`，完成后 `git push`
 - 先读对应 `MOC.md`，再定位/创建笔记
 - 本库 wikilink 使用带路径形式（`[[分类目录/文件名|显示名]]`），移动文件必须同步更新引用
 - 新笔记命名：描述性标题即可（中文/英文均可），避免空格与特殊字符
+- 原始来源先落 `98.Raw/`（保留原文），再在 `00.`–`06.` 写主题笔记并在 `source` 登记来源路径
 - 健康类笔记统一放 `05.Health/`（中医在 `05.Health/中医/`）

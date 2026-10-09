@@ -30,7 +30,7 @@ source: llm-wiki.md 原文整理＋本库实践总结
 
 | 层 | 职责 | 本库对应 |
 |---|---|---|
-| 原始来源 | 不可变的真相来源，LLM 只读 | `99.Attachments/`、外部文章的原始剪藏 |
+| 原始来源 | 不可变的真相来源，LLM 只读 | `98.Raw/`（文章/报告/转录等原文，2026-10-09 建立）；图片等附件在 `99.Attachments/` |
 | Wiki | LLM 生成与维护的 markdown 页面 | `00.*`–`06.*` 笔记 + 各 `MOC.md` 索引 |
 | Schema | 结构约定与工作流定义 | `AGENTS.md`（五键 frontmatter、tag 体系、Ingest/Query/Lint 工作流） |
 
@@ -79,7 +79,7 @@ source: llm-wiki.md 原文整理＋本库实践总结
 
 | 技巧 | 用法 | 本库现状 |
 |---|---|---|
-| Web Clipper | 浏览器剪藏文章为 markdown 进收件箱 | 推荐：剪藏后走 Ingest 消化 |
+| Web Clipper | 浏览器剪藏文章为 markdown | 推荐：剪藏原文落 `98.Raw/`（保留原文），再走 Ingest 消化 |
 | 图片本地化 | 附件目录设为 `99.Attachments/`，绑定"下载附件"快捷键 | 已具备 |
 | 关系图谱 | graph view 识别枢纽页与孤儿页，是 lint 的直观辅助 | 已具备 |
 | Marp | 从笔记直接生成演示幻灯片 | 按需启用 |

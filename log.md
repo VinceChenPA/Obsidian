@@ -25,3 +25,4 @@
 ## [2026-09-25] lint | zhihu-mcp 解析器改进回归验证（搜索 1→6 条、author/votes 填充、去重生效）：笔记补改进记录，本地 commit 2e3e4eb
 ## [2026-10-09] lint | LLM Wiki 模式符合性核对（三层架构＋Ingest/Query/Lint＋索引/日志全部到位）：修 AGENTS.md 环境漂移（Linux 单一平台→Windows/Linux 双平台）、Lint 死引用（被引用的 vault-lint skill 实际不存在，改为 schema 自带三层清单）、补「矛盾保留（已被 XX 取代）」约定；GEMINI.md 收敛为 AGENTS.md 指针（原小写 kebab-case 命名约定作废）；log.md 头部补 PowerShell 查询写法
 ## [2026-10-09] lint | 规则层改为彻底跨平台（取代上一条的"双平台并列"做法）：AGENTS.md 环境章节去掉 Windows 绝对路径与主机相关措辞，要求一律用相对仓库根路径、不写死系统假设、命令给 POSIX 与 PowerShell 两种写法；log.md 与《LLM Wiki 中文实践指南》的 log 查询示例同步并列
+## [2026-10-09] setup | 建立原始来源层 `98.Raw/`（补齐 LLM Wiki 三层架构中缺失的 raw sources 层）：新增目录 README（只读/不批量规范化/更正写 wiki 层）；AGENTS.md 补三层映射、原始来源不可变约定、Ingest 改为从 raw 读取且**原文保留**（取代"不留原始导入目录"）、Lint 规范层标注 raw 豁免；Home.md 加入口与使用指引；实践指南三层架构表与 Web Clipper 行同步。存量原文按决定不迁移（只对新增来源生效）
