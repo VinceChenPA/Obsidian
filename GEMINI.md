@@ -1,49 +1,30 @@
 ---
 tags:
   - config/gemini
+  - type/note
+created: 2025-10-09
+updated: 2026-10-09
+status: done
+source: AGENTS.md
 ---
 # Gemini Configuration for My Obsidian Vault
 
-This file provides instructions for Gemini on how to interact with my Obsidian knowledge base.
+> **本库唯一的规则源是 [`AGENTS.md`](AGENTS.md)。** 开始任何操作前先完整读取它，再按其中的目录结构、五键 frontmatter、tag 体系与 Ingest / Query / Lint 工作流执行。
+>
+> 本文件只是给 Gemini 的入口指针，不再重复规则。历史上这里写的"小写 kebab-case 文件名"等约定与 `AGENTS.md` 冲突，已于 2026-10-09 作废（同一约定只保留在 `AGENTS.md` 一处）。
 
-## About This Vault
+## 入口文件
 
-This is my personal knowledge base, also known as a "second brain," managed with Obsidian. It contains my daily logs, reading notes, domain-specific knowledge, and personal reflections. The main purpose is to capture, organize, and connect information that I find valuable.
+- `AGENTS.md` — 唯一规则源：同步规则、目录结构、frontmatter/tag 约定、三种工作流、触发短语
+- `Home.md` — 全库导航入口
+- 各主分类 `MOC.md` — 内容地图，先读 MOC 再定位或新建笔记
+- `log.md` — 追加式操作日志（`## [YYYY-MM-DD] <操作> | <说明>`）
+- `quicknote.md` — 全库收件箱（`type/quicknote`、`status: unread`，待消化）
 
-## My Conventions
+## 仍需记住的最小事项
 
-*   **File Naming:** Please use descriptive, lowercase, kebab-case filenames (e.g., `new-topic-name.md`).
-*   **Language:** I use a mix of English and Chinese. Please feel free to use either or both as appropriate for the context.
-*   **Markdown Style:**
-    *   Use standard Markdown.
-    *   Use `[[wikilinks]]` to link between notes in the vault.
-    *   When creating a new note, please start with a `# Title` that matches the filename.
-*   **Templates:** When creating a new quick note, please use the content from `Templates/QuickNote_Template.md`.
-
-## Directory Structure
-
-*   `00.DailyLogs`: Daily notes and journal entries.
-*   `01.ReadingLogs`: Notes and summaries from books, articles, and other content I consume.
-*   `02.Domain`: In-depth knowledge on specific subjects (e.g., finance, BASEL 3).
-*   `03.Engineering`: Topics related to software engineering and my professional work.
-*   `04.Career`: Notes and reflections on career development.
-*   `05.Health`: Health-related topics (cardiology, traditional Chinese medicine).
-*   `06.Personal`: Personal projects, goals, and ideas.
-*   `99.Attachments`: Images and other attachments. Please place new attachments here.
-*   `Templates`: Note templates.
-
-Start navigation from `Home.md` for an overview. Note: wikilinks in this vault use full paths (e.g., `[[05.Health/中医/风寒|风寒]]`); when moving or renaming files, update all referencing links accordingly.
-
-## How You Can Help
-
-*   **Create New Notes:** When I ask you to create a note, please place it in the most appropriate directory based on the content.
-*   **Organize Information:** Help me move or refactor notes to better fit the structure.
-*
-*   **Answer Questions:** Use the information within this vault to answer my questions.
-
-## My Preferences
-
-*   Please be proactive in linking to existing notes when creating new content.
-*   If a request is ambiguous, please ask for clarification.
-*   Keep your responses concise and to the point.
-
+- 笔记以简体中文为主，技术名词可保留英文；新建笔记的 `# 标题` 与文件名一致
+- wikilink 使用带路径形式（如 `[[05.Health/中医/风寒|风寒]]`），移动/重命名文件必须同步更新所有引用
+- 修改前先 `git pull --ff-only`，完成后 `git push`；提交信息用英文小写短句
+- 主动链接相关已有笔记；归属不确定时先读 `Home.md` 与对应 `MOC.md`，或直接问我
+- 纯提问只回答不落库；有归档价值的结论先问我是否归档

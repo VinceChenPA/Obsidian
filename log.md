@@ -1,6 +1,6 @@
 # Log
 
-追加式操作日志（ingest / query / lint）。格式：`## [YYYY-MM-DD] <操作> | <说明>`，可用 `grep "^## \[" log.md | tail -5` 查看最近 5 条。
+追加式操作日志（ingest / query / lint）。格式：`## [YYYY-MM-DD] <操作> | <说明>`。查看最近 5 条：Linux `grep "^## \[" log.md | tail -5`；Windows `Select-String -Path log.md -Pattern '^## \[' | Select-Object -Last 5`。
 
 ## [2026-09-13] setup | 建立 AI 工作流：AGENTS.md 新增 Ingest/Query 章节，创建 log.md
 ## [2026-09-13] setup | 引入 vault-lint 健康检查工作流（skill + AGENTS.md）
@@ -23,3 +23,4 @@
 ## [2026-09-25] ingest | OpenCode 深读《把编码 agent 当数据库来设计》（知乎）：事件溯源四层架构/压缩交接协议/Effect/对照 Claude Code，含本机实践对照表，更新 AI 两级 MOC
 ## [2026-09-25] lint | 将 V2 架构视角回填：《AI Agent 规则文件体系》补 SystemContext 运行时机制（类型化源/快照/纪元/对账/拒绝静默降级），《V1→V2 迁移记录》补「现象-原因」对照表
 ## [2026-09-25] lint | zhihu-mcp 解析器改进回归验证（搜索 1→6 条、author/votes 填充、去重生效）：笔记补改进记录，本地 commit 2e3e4eb
+## [2026-10-09] lint | LLM Wiki 模式符合性核对（三层架构＋Ingest/Query/Lint＋索引/日志全部到位）：修 AGENTS.md 环境漂移（Linux 单一平台→Windows/Linux 双平台）、Lint 死引用（被引用的 vault-lint skill 实际不存在，改为 schema 自带三层清单）、补「矛盾保留（已被 XX 取代）」约定；GEMINI.md 收敛为 AGENTS.md 指针（原小写 kebab-case 命名约定作废）；log.md 头部补 PowerShell 查询写法

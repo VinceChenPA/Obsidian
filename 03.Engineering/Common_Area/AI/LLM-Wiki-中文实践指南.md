@@ -4,7 +4,7 @@ tags:
   - LLM-Wiki
   - knowledge-management
 created: 2026-09-13
-updated: 2026-09-13
+updated: 2026-10-09
 status: active
 source: llm-wiki.md 原文整理＋本库实践总结
 ---
@@ -54,6 +54,7 @@ source: llm-wiki.md 原文整理＋本库实践总结
 
 **例子（真实）**："如何在 Obsidian 库中应用 llm-wiki 的最佳实践？"
 - 得到的四条建议没有停留在聊天里：Ingest/Query 工作流写进 `AGENTS.md`、Lint 做成 `vault-lint` skill、`log.md` 落地在根目录；
+  > **更正（2026-10-09）**：上文"Lint 做成 `vault-lint` skill"已被实践推翻——该 skill 从未真正创建（vault 内 `.opencode/` 与全局 `~/.config/opencode/skills/` 均无此条目）。现状：**Lint 由 `AGENTS.md` 自带的三层清单（内容层/结构层/规范层）承载**，不依赖外部 skill。
 - 本轮问答的产物就是你现在读到的这篇笔记。
 
 ### 3. Lint（健康检查）

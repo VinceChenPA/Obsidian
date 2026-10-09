@@ -36,6 +36,7 @@
 - **tag 体系**：`type/note`（普通笔记）、`type/quicknote`（快速捕获，`status: unread` 待消化，统一暂存根级 `quicknote.md`）、`type/log`（日期日志）；其余为主题词
 - **tag 命名规范**：只允许字母（含中文）/ 数字 / `_` / `-` / `/`，**禁止空格**；多词标签用连字符连接（如 `DeepSeek-Harness`、`Matt-Pocock`）——含空格的标签 Obsidian 会报"不被允许的标签名"且不登记（2026-09-06 全库审计修复）
 - **日志**：`00.DailyLogs/` 只放日期文件（`YYYY-MM-DD.md`），非日期内容请归入主题目录
+- **矛盾保留**：新来源推翻旧结论时保留旧观点并标注「已被 XX 取代」，不要静默删除（LLM Wiki 最佳实践：矛盾显式标记）
 - 不确定放哪个目录时询问用户，不要自作主张
 
 ## AI 工作流
@@ -72,10 +73,16 @@
 
 ### Lint（健康检查）
 
-定期或用户要求时执行（可用 `vault-lint` skill）：检查页面间矛盾、过时内容、孤儿页、被提及但无独立页的概念、缺失交叉引用与死链、MOC 遗漏、frontmatter/tag 合规。低风险项直接修复，内容判断项与用户确认，完成后在 `log.md` 追加 `## [YYYY-MM-DD] lint | <摘要>`。
+定期或用户要求时执行（本库当前没有独立的 lint skill，按下列清单手工扫描即可）。三层检查项：
+
+- **内容层**：页面间矛盾、被新来源取代的过时断言、可用搜索补齐的数据缺口
+- **结构层**：孤儿页（无入链）、被反复提及但无独立页的概念、缺失交叉引用、死链、MOC 遗漏（新增笔记是否已进对应 MOC）
+- **规范层**：frontmatter 五键（`tags`/`created`/`updated`/`status`/`source`）完整、tags 含 `type/*` 且无空格、wikilink 带路径形式、`00.DailyLogs/` 仅日期文件
+
+低风险项直接修复，内容判断项与用户确认，完成后在 `log.md` 追加 `## [YYYY-MM-DD] lint | <摘要>`。
 
 ## 环境
 
-- OS: Linux（非 Windows，无 `.cmd` 工具）
+- 本库同时存在于 Windows（`D:\Vince_Chen\Obsidian`）与 Linux 主机上，**不要假定某一个平台**：Windows 用 PowerShell，Linux 用 bash，示例命令按当前主机改写
 - Remote: `git@github.com:VinceChenPA/Obsidian.git`（SSH）
 - 无构建/测试/lint 命令
