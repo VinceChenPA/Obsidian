@@ -28,6 +28,7 @@
 ## 工具与 Harness 实践
 
 - [[03.Engineering/Common_Area/AI/DeepSeek Harness 最佳实践|DeepSeek Harness 最佳实践（软件工程师视角）]]
+- [[03.Engineering/Common_Area/AI/Super-Agent-架构（DSH）|Super-Agent 架构（DSH）— Router/Worker、事件驱动、Inline/Spill、BYOM、Watchdog]]
 - [[03.Engineering/Common_Area/AI/OpenCode-v2-架构深读|OpenCode v2 架构深读 — 把编码 agent 当数据库来设计（事件溯源/持久队列/压缩交接）]]
 - [[03.Engineering/Common_Area/AI/Claude Code|Claude Code — 规则文件/skill 布局/命令清单与 opencode·DSH 对照]]
 - [[03.Engineering/Common_Area/AI/copilot vs opencode|copilot vs opencode]]
