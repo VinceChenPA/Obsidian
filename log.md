@@ -38,3 +38,4 @@
 ## [2026-11-11] template | 新增待办清单模板 `Templates/todo_template.md`（`type/todo`，三区：进行中/待办/归档，Templater 生成日期与标题，条目行 5 字段）：AGENTS.md 登记 `type/todo` 与待办清单约定（根级 `todo.md` 为唯一活跃清单），Home.md 补模板入口
 ## [2026-11-11] template | 建根级待办清单实例 `todo.md`（空清单，`type/todo`，按模板三区结构），Home.md「工具与模板」补入口
 ## [2026-11-11] query | 归档《[[06.Personal/待办工作流|待办工作流]]》：每日捕获/分诊/归档、每周复盘五步、溢出规则、文件边界、代理口令与反模式；更新 06.Personal/MOC 与 AGENTS.md 指针
+## [2026-11-11] setup | 建 DSH 定时任务「待办清单周复盘」（每周日 20:00，target=new，dry-run 只读）；[[06.Personal/待办工作流]] 补「自动化」小节（节奏/模式/切换写模式条件），晨间分诊暂不建
