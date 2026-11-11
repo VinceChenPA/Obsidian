@@ -26,6 +26,7 @@
 
 ## 工具与模板
 - `quicknote.md` — 全库收件箱（快速捕获，待消化；耐久原文放 `98.Raw/`，临时速记放这里）
+- [[todo|todo.md]] — 待办清单（`type/todo`，唯一活跃清单；条目格式与状态分区见文件头说明）
 - [[Templates/generic_template|通用模板]] / [[Templates/QuickNote_Template|QuickNote 模板]] / [[Templates/todo_template|待办清单模板]]
 
 ## 使用指引（AI 代理必读）
