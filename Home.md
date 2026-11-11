@@ -26,7 +26,7 @@
 
 ## 工具与模板
 - `quicknote.md` — 全库收件箱（快速捕获，待消化；耐久原文放 `98.Raw/`，临时速记放这里）
-- [[Templates/generic_template|通用模板]] / [[Templates/QuickNote_Template|QuickNote 模板]]
+- [[Templates/generic_template|通用模板]] / [[Templates/QuickNote_Template|QuickNote 模板]] / [[Templates/todo_template|待办清单模板]]
 
 ## 使用指引（AI 代理必读）
 - 操作前先 `git pull --ff-only`，完成后 `git push`

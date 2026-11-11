@@ -23,7 +23,7 @@
 - `06.Personal/` — 个人项目与思考，含 `MOC.md`
 - `98.Raw/` — 原始来源层：文章 / 报告 / 转录等**不可变原文**（LLM 只读，规则见目录内 `README.md`）
 - `99.Attachments/` — 附件（图片等）
-- `Templates/` — 笔记模板
+- `Templates/` — 笔记模板（`generic_template.md` / `QuickNote_Template.md` / `todo_template.md`）
 
 > **三层结构（LLM Wiki）**：原始来源 = `98.Raw/`（附件图片放 `99.Attachments/`）→ wiki = `00.`–`06.` 主题笔记 + 各 `MOC.md` → schema = 本文件。外部导入的原始材料先落 `98.Raw/`，消化后**原文保留**；临时速记放根级 `quicknote.md`，消化后移除。
 
@@ -34,7 +34,8 @@
 - **语言**：笔记以简体中文为主，技术名词可保留英文
 - **新建笔记**：H1 用描述性标题（**鼓励与文件名一致，但不强制**；标题必须与内容相符、不误导）；主动链接相关已有笔记；健康类一律放 `05.Health/`
 - **frontmatter**：统一使用 `tags` / `created` / `updated` / `status` / `source` 五键；tags 至少含一个 `type/*` 类型标签
-- **tag 体系**：`type/note`（普通笔记）、`type/quicknote`（快速捕获，`status: unread` 待消化，统一暂存根级 `quicknote.md`）、`type/log`（日期日志）；其余为主题词
+- **tag 体系**：`type/note`（普通笔记）、`type/quicknote`（快速捕获，`status: unread` 待消化，统一暂存根级 `quicknote.md`）、`type/log`（日期日志）、`type/todo`（待办清单，`status: active` 进行中 / `done` 已清空）；其余为主题词
+- **待办清单**：模板 `Templates/todo_template.md`；唯一活跃清单放根级 `todo.md`，项目型大任务才在 `06.Personal/` 下另建。条目行格式 `- [ ] 标题 ｜ P2 ｜ 截止 YYYY-MM-DD ｜ [[关联]]`（截止与关联可省略，优先级缺省 P2），状态由区块表达：`## 进行中`（doing）/ `## 待办`（todo）/ `## 归档`（done 勾选 `[x]`、dropped 标 `❌`）。不与 `00.DailyLogs/` 自动联动，需要时手动嵌入 `![[todo#待办]]`
 - **tag 命名规范**：只允许字母（含中文）/ 数字 / `_` / `-` / `/`，**禁止空格**；多词标签用连字符连接（如 `DeepSeek-Harness`、`Matt-Pocock`）——含空格的标签 Obsidian 会报"不被允许的标签名"且不登记（2026-09-06 全库审计修复）
 - **日志**：`00.DailyLogs/` 只放日期文件（`YYYY-MM-DD.md`），非日期内容请归入主题目录
 - **矛盾保留**：新来源推翻旧结论时保留旧观点并标注「已被 XX 取代」，不要静默删除（LLM Wiki 最佳实践：矛盾显式标记）
