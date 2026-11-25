@@ -4,6 +4,7 @@
 
 ## AI 编码方法论与 Skills
 
+- [[03.Engineering/Common_Area/AI/Coding Agent Harness 工程约束体系|Coding Agent Harness 工程约束体系 — 认知/代码库/验收三层 + 纠偏三问]]
 - [[03.Engineering/Common_Area/AI/Frontier-Engineering|Frontier Engineering（前沿工程）— Kiro 的 10 条原则]]
 - [[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论（v1.2.3）]]
 - [[03.Engineering/Common_Area/AI/matt-pocock-skills-installation-notes|Matt Pocock Skills 安装记录]]

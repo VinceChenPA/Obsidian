@@ -14,6 +14,8 @@ source:
 
 ## V2 规则文件的运行时机制（SystemContext）
 
+> **约束分层提醒**：规则文件是工程约束体系的**最后一层**——能用架构、类型、Lint、测试表达的约束不该写进这里。见 [[03.Engineering/Common_Area/AI/Coding Agent Harness 工程约束体系|Coding Agent Harness 工程约束体系]]。
+
 V2 把系统上下文（AGENTS.md、全局规则、`instructions`）建模为**可独立刷新的类型化源**（源码 `system-context/index.ts`）：
 
 - 每个源有 `key` / `load` / `baseline`（首次渲染进模型的内容）/ `update`（变更时告知模型的增量文本）；

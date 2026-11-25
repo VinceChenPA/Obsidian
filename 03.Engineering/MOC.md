@@ -23,6 +23,7 @@
 
 ## AI 辅助开发
 - [[03.Engineering/Common_Area/AI/MOC|AI 辅助开发 · 内容地图（方法论 / Agent / 工作流）]]
+- [[03.Engineering/Common_Area/AI/Coding Agent Harness 工程约束体系|Coding Agent Harness 工程约束体系（认知·代码库·验收三层）]]
 - [[03.Engineering/Common_Area/AI/matt-pocock-skills|Matt Pocock Skills — AI 编码方法论]]
 - [[03.Engineering/Common_Area/AI/Matt-Pocock-AI-工作流详解|Matt Pocock AI 工作流详解（7 阶段 + 命令顺序）]]
 - [[03.Engineering/Common_Area/AI/Spec-Driven Development|Spec-Driven Development (SDD) — 工具对比与实操指南]]
